@@ -11,6 +11,20 @@ import Context from "../src/Components/Context";
 import config from "./config";
 import CreateRecipe from "../src/Components/Create-Recipe";
 import Profile from "../src/Components/Profile";
+import Darkmode from "darkmode-js";
+const options = {
+  bottom: "64px", // default: '32px'
+  right: "32px",
+  left: "unset",
+  time: "0.5s", // default: '0.3s'
+  mixColor: "#fff", // default: '#fff'
+  backgroundColor: "#fff", // default: '#fff'
+  buttonColorDark: "#100f2c", // default: '#100f2c'
+  buttonColorLight: "#fff", // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: "🌓", // default: ''
+  autoMatchOsTheme: true // default: true
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +32,6 @@ class App extends React.Component {
     this.state = {
       currentUser: {},
       isLoggedIn: false,
-      isLight: true,
       hasToken: this.hasAuthToken()
     };
   }
@@ -69,6 +82,8 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.currentUser);
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
     return (
       <Context.Provider
         value={{

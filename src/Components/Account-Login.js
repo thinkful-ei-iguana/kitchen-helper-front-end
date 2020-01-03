@@ -5,22 +5,8 @@ import Context from "../Components/Context";
 
 export default class Login extends React.Component {
   static contextType = Context;
-  static defaultProps = {
-    location: {},
-    history: {
-      push: () => {}
-    }
-  };
 
   state = { error: null };
-
-  onLoginSuccess = () => {
-    console.log("success");
-    const { location, history } = this.props;
-    const destination = (location.state || {}).from || "/Home";
-    history.push(destination);
-    console.log(destination);
-  };
 
   loginSubmit = e => {
     e.preventDefault();
@@ -34,7 +20,6 @@ export default class Login extends React.Component {
         user_name.value = "";
         password.value = "";
         this.context.saveAuthToken(res.authToken);
-        this.onLoginSuccess();
         this.context.onLogin();
       })
       .catch(res => {

@@ -28,7 +28,7 @@ export default class DetailedView extends React.Component {
   };
 
   componentDidMount() {
-    AuthHelper.getPublicAccountData(this.props.match.params.username).then(
+    AuthHelper.getPublicAccountData(this.props.match.params.user_name).then(
       data =>
         this.setState({
           profileData: data,
@@ -52,7 +52,7 @@ export default class DetailedView extends React.Component {
 
   accountOption = () => {
     if (
-      this.context.currentUser.username === this.props.match.params.user_name
+      this.context.currentUser.user_name === this.props.match.params.user_name
     ) {
       return (
         <div className="accountButtons">
@@ -67,7 +67,7 @@ export default class DetailedView extends React.Component {
     }
   };
 
-  renderListing = () => {
+  renderRecipeListing = () => {
     if (this.state.myRecipes.length > 1) {
       this.state.myRecipes.map(recipe => {
         return <Recipe key={recipe.id} {...recipe} />;

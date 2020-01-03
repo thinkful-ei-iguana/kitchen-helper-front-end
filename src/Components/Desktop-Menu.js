@@ -7,20 +7,17 @@ export default class DesktopMenu extends React.Component {
 
   render() {
     console.log(this.context.isLoggedIn);
-    const LightModeToggle = this.context.isLight
-      ? "far fa-moon fa-fw"
-      : "far fa-lightbulb fa-fw";
     return (
       <div className="desktopMenu">
         {this.context.isLoggedIn ? (
           <div className="Header__logged-in">
             <div class="dropdown">
               <button class="dropbtn">
-                {this.context.currentUser.username}
+                {this.context.currentUser.user_name}
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
-                <Link to={`/user/${this.context.currentUser.username}`}>
+                <Link to={`/user/${this.context.currentUser.user_name}`}>
                   My Account
                 </Link>
                 <Link to="/Create-Recipe">Create Recipe</Link>
@@ -44,17 +41,11 @@ export default class DesktopMenu extends React.Component {
               required
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Search</span>
+              <span className="a-field__label"></span>
             </span>
           </label>
-          <button type="submit">search</button>
+          <button type="submit">Search</button>
         </form>
-        <div className="DarkMode">
-          <button className="LightModeToggle" onClick={this.context.LightMode}>
-            <i className={LightModeToggle}></i>
-            <p>Too bright? Click me.</p>
-          </button>
-        </div>
       </div>
     );
   }

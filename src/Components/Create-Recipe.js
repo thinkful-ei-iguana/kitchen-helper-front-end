@@ -5,12 +5,6 @@ import Context from "../Components/Context";
 
 export default class CreateRecipe extends React.Component {
   static contextType = Context;
-  static defaultProps = {
-    location: {},
-    history: {
-      push: () => {}
-    }
-  };
 
   componentDidMount() {
     if (!this.context.hasAuthToken()) {

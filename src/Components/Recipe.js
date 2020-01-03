@@ -22,7 +22,7 @@ export default function Recipe(props) {
           <div className="ThingRecipeItem__text">
             <h2 className="ThingRecipeItem__heading">{props.title}</h2>
             <p className="ThingRecipeItem__description">
-              {truncate(props.description)}
+              {truncate(props.recipe_description)}
             </p>
           </div>
         </div>

@@ -23,9 +23,9 @@ export default class Login extends React.Component {
 
     this.setState({ error: null });
     Auth.createAccount({
-      name: first_name.value,
-      username: user_name.value.toLowerCase(),
-      email: user_email.value,
+      first_name: first_name.value,
+      user_name: user_name.value.toLowerCase(),
+      user_email: user_email.value,
       password: password.value
     })
       .then(user => {

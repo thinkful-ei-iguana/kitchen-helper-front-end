@@ -35,11 +35,6 @@ const RecipeHelper = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   }
-
-  // get listing by owner
-  // post listing
-  // patch listing
-  // delete listing
 };
 
 export default RecipeHelper;

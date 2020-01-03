@@ -40,7 +40,6 @@ export default class Landing extends React.Component {
           </div>
         </section>
         <section id="Landing-Buttons">
-          <h3 id="Connect-H3">Connect With The Kitchen Helper Network!</h3>
           <hr id="Connect-Divider" />
           <div id="buttons">
             <a href="https://github.com" target="blank_">
