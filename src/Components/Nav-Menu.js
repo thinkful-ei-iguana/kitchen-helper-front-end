@@ -33,6 +33,7 @@ export default class NavMenu extends React.Component {
         </Link>
         <button className="Open-Menu" onClick={this.toggleMenu}>
           <i className="fas fa-bars"></i>
+          Menu
         </button>
         {isMobile() ? (
           <MobileMenu

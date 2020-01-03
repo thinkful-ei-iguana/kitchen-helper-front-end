@@ -11,7 +11,7 @@ export default class Home extends React.Component {
             <label className="field a-field a-field_a2">
               <input
                 className="field__input a-field__input"
-                placeholder="Bread"
+                placeholder="Search for recipes"
                 required
               />
               <span className="a-field__label-wrap">

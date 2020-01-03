@@ -12,7 +12,7 @@ export default class Landing extends React.Component {
               src={SmartLogo}
               alt="Smart Marketplace Logo"
             /> */}
-            <h4 id="Landing-Slogan">quality shopping with a modern twist</h4>
+            <h4 id="Landing-Slogan">Make fun recipes with friends!</h4>
             <div id="HomeBtn">
               <Link id="Home-Btn" to="/Home">
                 Continue to site
@@ -25,61 +25,22 @@ export default class Landing extends React.Component {
         </header>
         <section id="Landing-Documentation">
           <div id="FAQ">
-            <h2 id="FAQ-H2">Hi I'm the kitchen helper!</h2>
-            <p id="FAQ-P">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper
-              nibh turpis, a commodo nisl aliquet in. Praesent dolor dolor,
-              efficitur vel justo quis, pulvinar euismod nisi. Aliquam
-              condimentum maximus ipsum quis egestas. Nullam dictum diam diam.
-              Vestibulum finibus tortor congue erat fermentum, non aliquet nunc
-              venenatis. Donec semper interdum justo, at imperdiet diam euismod
-              ac. Nam tempus elit et lacus pharetra, sit amet dignissim sem
-              auctor. Cras tristique pulvinar dui non lobortis. Morbi id mattis
-              ex. Mauris dictum eu elit ac convallis. Ut placerat ut felis et
-              fringilla. Nunc egestas quis ex vitae feugiat. Duis varius ex est,
-              ac ultrices ligula pharetra in. Phasellus faucibus libero vitae
-              tellus dapibus consequat.
-            </p>
+            <h2 id="FAQ-H2">Hi I'm the kitchen helper application!</h2>
+            <p id="FAQ-P">I'm the 1st recipe!</p>
           </div>
           <hr id="Landing-Divider" />
           <div id="FAQ">
-            <h2 id="FAQ-H2">Hi I'm the kitchen helper!</h2>
-            <p id="FAQ-P">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper
-              nibh turpis, a commodo nisl aliquet in. Praesent dolor dolor,
-              efficitur vel justo quis, pulvinar euismod nisi. Aliquam
-              condimentum maximus ipsum quis egestas. Nullam dictum diam diam.
-              Vestibulum finibus tortor congue erat fermentum, non aliquet nunc
-              venenatis. Donec semper interdum justo, at imperdiet diam euismod
-              ac. Nam tempus elit et lacus pharetra, sit amet dignissim sem
-              auctor. Cras tristique pulvinar dui non lobortis. Morbi id mattis
-              ex. Mauris dictum eu elit ac convallis. Ut placerat ut felis et
-              fringilla. Nunc egestas quis ex vitae feugiat. Duis varius ex est,
-              ac ultrices ligula pharetra in. Phasellus faucibus libero vitae
-              tellus dapibus consequat.
-            </p>
+            <h2 id="FAQ-H2">Hi I'm the kitchen helper application!</h2>
+            <p id="FAQ-P">I'm the 2nd recipe!</p>
           </div>
           <hr id="Landing-Divider" />
           <div id="FAQ">
-            <h2 id="FAQ-H2">Hi I'm the kitchen helper!</h2>
-            <p id="FAQ-P">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper
-              nibh turpis, a commodo nisl aliquet in. Praesent dolor dolor,
-              efficitur vel justo quis, pulvinar euismod nisi. Aliquam
-              condimentum maximus ipsum quis egestas. Nullam dictum diam diam.
-              Vestibulum finibus tortor congue erat fermentum, non aliquet nunc
-              venenatis. Donec semper interdum justo, at imperdiet diam euismod
-              ac. Nam tempus elit et lacus pharetra, sit amet dignissim sem
-              auctor. Cras tristique pulvinar dui non lobortis. Morbi id mattis
-              ex. Mauris dictum eu elit ac convallis. Ut placerat ut felis et
-              fringilla. Nunc egestas quis ex vitae feugiat. Duis varius ex est,
-              ac ultrices ligula pharetra in. Phasellus faucibus libero vitae
-              tellus dapibus consequat.
-            </p>
+            <h2 id="FAQ-H2">Hi I'm the kitchen helper application!</h2>
+            <p id="FAQ-P">I'm the 3rd recipe!</p>
           </div>
         </section>
         <section id="Landing-Buttons">
-          <h3 id="Connect-H3">Connect With Me</h3>
+          <h3 id="Connect-H3">Connect With The Kitchen Helper Network!</h3>
           <hr id="Connect-Divider" />
           <div id="buttons">
             <a href="https://github.com" target="blank_">

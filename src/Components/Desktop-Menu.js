@@ -40,7 +40,7 @@ export default class DesktopMenu extends React.Component {
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"
-              placeholder="Bread"
+              placeholder="Search"
               required
             />
             <span className="a-field__label-wrap">
@@ -52,6 +52,7 @@ export default class DesktopMenu extends React.Component {
         <div className="DarkMode">
           <button className="LightModeToggle" onClick={this.context.LightMode}>
             <i className={LightModeToggle}></i>
+            <p>Too bright? Click me.</p>
           </button>
         </div>
       </div>

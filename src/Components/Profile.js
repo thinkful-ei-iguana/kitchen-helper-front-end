@@ -90,7 +90,7 @@ export default class DetailedView extends React.Component {
         <div className="section">
           <h1 className="profile-name">MEET {this.state.first_name}</h1>
           <div className="container">
-            <a className="profile-email" href="#">
+            <a className="profile-email" href="#profile-email">
               {this.state.profileData.email}
             </a>
             <span className="profile-date_created">
