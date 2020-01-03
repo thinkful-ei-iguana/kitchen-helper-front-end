@@ -28,9 +28,7 @@ export default class NavMenu extends React.Component {
   render() {
     return (
       <header className="Nav-Header">
-        <Link to="/Home">
-          {/* <img className="Nav-Logo" src={} alt="Smart Marketplace Logo" /> */}
-        </Link>
+        <Link to="/Home"></Link>
         <button className="Open-Menu" onClick={this.toggleMenu}>
           <i className="fas fa-bars"></i>
           Menu

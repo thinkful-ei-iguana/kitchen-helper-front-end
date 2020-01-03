@@ -67,7 +67,7 @@ export default class DetailedView extends React.Component {
     }
   };
 
-  renderRecipeListing = () => {
+  renderRecipeRecipe = () => {
     if (this.state.myRecipes.length > 1) {
       this.state.myRecipes.map(recipe => {
         return <Recipe key={recipe.id} {...recipe} />;

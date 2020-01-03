@@ -32,7 +32,8 @@ class App extends React.Component {
     this.state = {
       currentUser: {},
       isLoggedIn: false,
-      hasToken: this.hasAuthToken()
+      hasToken: this.hasAuthToken(),
+      recipes: []
     };
   }
 
@@ -45,6 +46,13 @@ class App extends React.Component {
         }))
       );
     }
+    fetch("http://localhost:8000/api/recipes")
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ recipes: data });
+      });
   }
 
   saveAuthToken = token => {
@@ -74,12 +82,6 @@ class App extends React.Component {
     this.setState({ currentUser: {}, isLoggedIn: false });
   };
 
-  toggleLightMode = () => {
-    this.setState(prevState => ({
-      isLight: !prevState.isLight
-    }));
-  };
-
   render() {
     console.log(this.state.currentUser);
     const darkmode = new Darkmode(options);
@@ -93,8 +95,8 @@ class App extends React.Component {
           saveAuthToken: this.saveAuthToken,
           getAuthToken: this.getAuthToken,
           hasAuthToken: this.hasAuthToken,
+          recipes: this.state.recipes,
           makeBasicAuthToken: this.makeBasicAuthToken,
-          lightMode: this.toggleLightMode,
           onLogin: this.onLogin,
           onLogout: this.onLogout
         }}
