@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default class SearchResults extends React.Component {
   constructor(props) {
@@ -22,11 +23,12 @@ export default class SearchResults extends React.Component {
   render() {
     return (
       <div className="Landing">
+        <Link to="/">Home</Link>
         <header id="Landing-Header">
           <form id="SearchForm">
             <label className="field a-field a-field_a2">
               <span className="a-field__label-wrap">
-                <span className="a-field__label">Search</span>
+                <span className="a-field__label">Searched results</span>
               </span>
             </label>
           </form>

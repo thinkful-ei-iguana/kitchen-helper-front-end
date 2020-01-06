@@ -71,11 +71,12 @@ class App extends React.Component {
   };
 
   onLogin = () => {
-    AuthHelper.getCurrentUser(this.getAuthToken()).then(data =>
-      this.setState(prevState => ({
-        currentUser: data,
-        isLoggedIn: true
-      }))
+    AuthHelper.getCurrentUser(this.getAuthToken()).then(
+      data =>
+        (this.setState = () => ({
+          currentUser: data,
+          isLoggedIn: true
+        }))
     );
   };
 

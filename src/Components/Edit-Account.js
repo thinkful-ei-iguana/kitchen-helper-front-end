@@ -133,8 +133,8 @@ export default class Login extends React.Component {
             </span>
           </label>
           <div className="btn-row">
-            <button className="submitLogin">Submit Changes</button>
-            <Link to="/Login">
+            <button className="submitinformation">Submit Changes</button>
+            <Link to="/login">
               <button className="newAccount">Have an account?</button>
             </Link>
           </div>

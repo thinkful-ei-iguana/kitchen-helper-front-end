@@ -9,6 +9,7 @@ export default class Dashboard extends React.Component {
     super();
     this.state = { counter: 0 };
   }
+
   render() {
     if (this.context.recipes.length === 0) {
       return <p>Loading</p>;
@@ -27,7 +28,7 @@ export default class Dashboard extends React.Component {
           </div>
         </header>
         <section>
-          <button>Make a new recipe?</button>
+          <Link to="/create-recipe"> Make a new recipe!</Link>
         </section>
         <section>
           <Link

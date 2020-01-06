@@ -121,7 +121,7 @@ export default class CreateRecipe extends React.Component {
             </span>
           </label>
           <div className="btn-row">
-            <button className="submitLogin">Submit</button>
+            <button className="submitRecipeEdit">Submit</button>
             <Link to="Dashboard">
               <button className="newAccount">Cancel</button>
             </Link>

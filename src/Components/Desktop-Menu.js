@@ -47,7 +47,7 @@ export default class DesktopMenu extends React.Component {
         ) : (
           <div className="Header__logged-out">
             {/* onClick={refreshPage} */}
-            <Link to="/login">Log in</Link>
+            <Link to="/login">Log in Test</Link>
             <p>#a</p>
             <Link to="/create-account"> Register</Link>
             <p></p>

@@ -92,7 +92,7 @@ export default class Login extends React.Component {
             </span>
           </label>
           <div className="btn-row">
-            <button className="submitLogin">Create</button>
+            <button className="submitCreate">Create</button>
             <Link to="/Login">
               <button className="newAccount">Already have an account?</button>
             </Link>

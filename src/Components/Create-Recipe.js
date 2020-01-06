@@ -28,15 +28,15 @@ export default class CreateRecipe extends React.Component {
 
   // created_by is === currentUser.id at time of recipe creation
 
-  createSubmit = ev => {
-    ev.preventDefault();
+  createSubmit = e => {
+    e.preventDefault();
     const created_by = this.context.currentUser.id;
     const {
       title,
       recipe_description,
       recipe_ingredients,
       time_to_make
-    } = ev.target;
+    } = e.target;
 
     this.setState({ error: null });
     Recipe.createRecipe({
@@ -122,7 +122,7 @@ export default class CreateRecipe extends React.Component {
             </span>
           </label>
           <div className="btn-row">
-            <button className="submitLogin">Create recipe</button>
+            <button className="submitCreateRecipe">Create recipe</button>
             <Link to="/Dashboard">
               <button className="newAccount">Cancel</button>
             </Link>
