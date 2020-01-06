@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
 import Context from "../Components/Context";
 
@@ -17,33 +18,20 @@ export default class Landing extends React.Component {
     });
 
     const frontPage = this.context.recipes;
-    const recipesMade = this.state.counter;
     const recipeCounter = () => {
       this.setState({
         counter: this.state.counter + 1
       });
     };
-    console.log(recipesMade);
-
-    // const recipeCounterCopy = () => {
-    //   this.setState
-    //   numberCounter = recipeCounter;
-    // };
-
-    function recipeMadeCountFunct() {
-      let foo = document.getElementById("recipeMadeCount").innerHTML;
-      foo++;
-      document.getElementById("recipeMadeCount").innerHTML = foo;
-    }
 
     return (
       <div className="Landing">
         <header id="Landing-Header" className="flex-container">
           <div className="flex-item">
-            <h4 id="Landing-Slogan">Make fun recipes with friends!</h4>
+            <h4 id="Landing-Slogan">Make fun foods with friends!</h4>
           </div>
         </header>
-        <section id="Landing-Documentation">
+        <section id="landingDocumentation">
           <div id="FAQ">
             <h2 id="FAQ-H2">{frontPage[0].title}</h2>
             <button
@@ -85,7 +73,7 @@ export default class Landing extends React.Component {
           <div>
             <h2>
               Number of recipes you've made:
-              <span id="recipeMadeCount">0</span>
+              <span id="recipeMadeCount"> {this.state.counter}</span>
             </h2>
           </div>
         </section>

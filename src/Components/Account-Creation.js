@@ -49,11 +49,22 @@ export default class Login extends React.Component {
             <input
               className="field__input a-field__input"
               required
-              name="name"
+              name="first_name"
               placeholder="Name"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Name</span>
+              <span className="a-field__label">Display name</span>
+            </span>
+          </label>
+          <label className="field a-field a-field_a2">
+            <input
+              className="field__input a-field__input"
+              required
+              name="user_name"
+              placeholder="Username"
+            />
+            <span className="a-field__label-wrap">
+              <span className="a-field__label">Username</span>
             </span>
           </label>
           <label className="field a-field a-field_a2">
@@ -61,33 +72,11 @@ export default class Login extends React.Component {
               className="field__input a-field__input"
               required
               type="email"
-              name="email"
+              name="user_email"
               placeholder="Email"
             />
             <span className="a-field__label-wrap">
               <span className="a-field__label">Email</span>
-            </span>
-          </label>
-          <label className="field a-field a-field_a2">
-            <input
-              className="field__input a-field__input"
-              required
-              name="location"
-              placeholder="Location"
-            />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label">Location</span>
-            </span>
-          </label>
-          <label className="field a-field a-field_a2">
-            <input
-              className="field__input a-field__input"
-              required
-              name="username"
-              placeholder="Username"
-            />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label">Username</span>
             </span>
           </label>
           <label className="field a-field a-field_a2">

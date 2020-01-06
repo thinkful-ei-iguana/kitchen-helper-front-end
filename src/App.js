@@ -12,6 +12,8 @@ import config from "./config";
 import CreateRecipe from "../src/Components/Create-Recipe";
 import Profile from "../src/Components/Profile";
 import Darkmode from "darkmode-js";
+import Dashboard from "../src/Components/Dashboard";
+// eslint-disable-next-line no-unused-vars
 import DesktopMenu from "./Components/Mobile-Menu";
 const options = {
   bottom: "64px", // default: '32px'
@@ -161,6 +163,12 @@ class App extends React.Component {
               path="/recipe/:recipeid"
               render={routeProps => {
                 return;
+              }}
+            />
+            <Route
+              path="/Dashboard"
+              render={routeProps => {
+                return <Dashboard {...routeProps} />;
               }}
             />
           </Router>

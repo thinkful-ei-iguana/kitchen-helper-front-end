@@ -5,6 +5,12 @@ import Context from "../Components/Context";
 
 export default class Login extends React.Component {
   static contextType = Context;
+  static defaultProps = {
+    location: {},
+    history: {
+      push: () => {}
+    }
+  };
 
   state = { error: null };
 
@@ -21,6 +27,7 @@ export default class Login extends React.Component {
         password.value = "";
         this.context.saveAuthToken(res.authToken);
         this.context.onLogin();
+        this.props.history.push("/dashboard");
       })
       .catch(res => {
         this.setState({ error: res.error });
@@ -36,7 +43,7 @@ export default class Login extends React.Component {
             <input
               className="field__input a-field__input"
               required
-              name="username"
+              name="user_name"
               placeholder="Username"
             />
             <span className="a-field__label-wrap">

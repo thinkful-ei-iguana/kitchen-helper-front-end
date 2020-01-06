@@ -41,7 +41,9 @@ export default class DesktopMenu extends React.Component {
         ) : (
           <div className="Header__logged-out">
             <Link to="/login">Log in</Link>
-            <Link to="/create-account">Register</Link>
+            <p></p>
+            <Link to="/create-account"> Register</Link>
+            <p></p>
           </div>
         )}
         <form className="Desktop-Menu-UserSearchForm">

@@ -16,6 +16,7 @@ export default class CreateRecipe extends React.Component {
     if (!this.context.hasAuthToken()) {
       this.props.history.push("/Login");
     }
+    console.log(this.props);
   }
 
   handleCreationSuccess = () => {
