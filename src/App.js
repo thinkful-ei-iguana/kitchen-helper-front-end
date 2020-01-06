@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import NavMenu from "../src/Components/Nav-Menu";
 import Landing from "../src/Components/Landing";
 import Home from "../src/Components/Home";
@@ -12,6 +12,7 @@ import config from "./config";
 import CreateRecipe from "../src/Components/Create-Recipe";
 import Profile from "../src/Components/Profile";
 import Darkmode from "darkmode-js";
+import DesktopMenu from "./Components/Mobile-Menu";
 const options = {
   bottom: "64px", // default: '32px'
   right: "32px",
@@ -83,7 +84,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.currentUser);
     const darkmode = new Darkmode(options);
     darkmode.showWidget();
     return (
@@ -103,61 +103,67 @@ class App extends React.Component {
       >
         {" "}
         <div className="App">
-          <NavMenu />
-          <Route
-            exact
-            path="/"
-            render={routeProps => {
-              return <Landing {...routeProps} />;
-            }}
-          />
-          <Route
-            exact
-            path="/Home"
-            render={routeProps => {
-              return <Home {...routeProps} />;
-            }}
-          />
-          <Route
-            exact
-            path="/Login"
-            render={routeProps => {
-              return <AccountLogin {...routeProps} />;
-            }}
-          />
-          <Route
-            exact
-            path="/Create-Account"
-            render={routeProps => {
-              return <AccountCreation {...routeProps} />;
-            }}
-          />
-          <Route
-            exact
-            path="/user/:username"
-            render={routeProps => {
-              return <Profile {...routeProps} />;
-            }}
-          />
-          <Route
-            exact
-            path="/search/:searchterm"
-            render={routeProps => {
-              return <SearchResults {...routeProps} />;
-            }}
-          />
-          <Route
-            path="/Create-Recipe"
-            render={routeProps => {
-              return <CreateRecipe {...routeProps} />;
-            }}
-          />
-          <Route
-            path="/recipe/:recipeid"
-            render={routeProps => {
-              return;
-            }}
-          />
+          <Router>
+            <Route
+              exact
+              path="/"
+              render={routeProps => {
+                return (
+                  <>
+                    <NavMenu {...routeProps} />
+                    <Landing {...routeProps} />
+                  </>
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/Home"
+              render={routeProps => {
+                return <Home {...routeProps} />;
+              }}
+            />
+            <Route
+              exact
+              path="/Login"
+              render={routeProps => {
+                return <AccountLogin {...routeProps} />;
+              }}
+            />
+            <Route
+              exact
+              path="/Create-Account"
+              render={routeProps => {
+                return <AccountCreation {...routeProps} />;
+              }}
+            />
+            <Route
+              exact
+              path="/user/:username"
+              render={routeProps => {
+                return <Profile {...routeProps} />;
+              }}
+            />
+            <Route
+              exact
+              path="/search/:searchterm"
+              render={routeProps => {
+                return <SearchResults {...routeProps} />;
+              }}
+            />
+            <Route
+              path="/Create-Recipe"
+              render={routeProps => {
+                return <CreateRecipe {...routeProps} />;
+              }}
+            />
+            <Route
+              path="/recipe/:recipeid"
+              render={routeProps => {
+                return;
+              }}
+            />
+          </Router>
         </div>
       </Context.Provider>
     );

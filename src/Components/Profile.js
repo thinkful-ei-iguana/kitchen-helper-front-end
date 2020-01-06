@@ -82,9 +82,6 @@ export default class DetailedView extends React.Component {
   };
 
   render() {
-    console.log(this.state);
-    // const firstName =
-    //   this.state.profileData.name.split(' ')[0] || this.state.profileData.name;
     return (
       <div className="Profile">
         <div className="section">

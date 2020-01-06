@@ -4,38 +4,89 @@ import Context from "../Components/Context";
 
 export default class Landing extends React.Component {
   static contextType = Context;
+  constructor() {
+    super();
+    this.state = { counter: 0 };
+  }
   render() {
     if (this.context.recipes.length === 0) {
       return <p>Loading</p>;
     }
+    document.addEventListener("click", function(event) {
+      event.preventDefault(event);
+    });
+
     const frontPage = this.context.recipes;
-    console.log(this.context);
+    const recipesMade = this.state.counter;
+    const recipeCounter = () => {
+      this.setState({
+        counter: this.state.counter + 1
+      });
+    };
+    console.log(recipesMade);
+
+    // const recipeCounterCopy = () => {
+    //   this.setState
+    //   numberCounter = recipeCounter;
+    // };
+
+    function recipeMadeCountFunct() {
+      let foo = document.getElementById("recipeMadeCount").innerHTML;
+      foo++;
+      document.getElementById("recipeMadeCount").innerHTML = foo;
+    }
+
     return (
       <div className="Landing">
         <header id="Landing-Header" className="flex-container">
           <div className="flex-item">
             <h4 id="Landing-Slogan">Make fun recipes with friends!</h4>
-            <div id="HomeBtn">
-              <Link id="Home-Btn" to="/Home">
-                Continue to site
-              </Link>
-            </div>
           </div>
         </header>
         <section id="Landing-Documentation">
           <div id="FAQ">
             <h2 id="FAQ-H2">{frontPage[0].title}</h2>
+            <button
+              id="RecipeOne"
+              onClick={e => {
+                recipeCounter();
+              }}
+            >
+              Make this recipe?
+            </button>
             <p id="FAQ-P">{frontPage[0].recipe_description}</p>
           </div>
           <hr id="Landing-Divider" />
           <div id="FAQ">
             <h2 id="FAQ-H2">{frontPage[1].title}</h2>
+            <button
+              id="RecipeTwo"
+              onClick={e => {
+                recipeCounter();
+              }}
+            >
+              Make this recipe?
+            </button>
             <p id="FAQ-P">{frontPage[1].recipe_description}</p>
           </div>
           <hr id="Landing-Divider" />
           <div id="FAQ">
             <h2 id="FAQ-H2">{frontPage[2].title}</h2>
+            <button
+              id="RecipeThree"
+              onClick={e => {
+                recipeCounter();
+              }}
+            >
+              Make this recipe?
+            </button>
             <p id="FAQ-P">{frontPage[2].recipe_description}</p>
+          </div>
+          <div>
+            <h2>
+              Number of recipes you've made:
+              <span id="recipeMadeCount">0</span>
+            </h2>
           </div>
         </section>
         <section id="Landing-Buttons">

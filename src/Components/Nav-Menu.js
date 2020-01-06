@@ -44,6 +44,7 @@ export default class NavMenu extends React.Component {
         ) : (
           <DesktopMenu
             state={this.state}
+            routeProps={this.props}
             LightMode={this.toggleLightMode}
             renderLoginLink={this.renderLoginLink}
             renderLogoutLink={this.renderLogoutLink}
