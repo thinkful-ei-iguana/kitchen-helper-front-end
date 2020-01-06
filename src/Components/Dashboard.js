@@ -16,17 +16,27 @@ export default class Dashboard extends React.Component {
     document.addEventListener("click", function(event) {
       event.preventDefault(event);
     });
-    const user = 12;
+
+    // const user = 12; intent is to attack created_by to currentuser id
 
     return (
       <div className="Dashboard">
         <header id="Dashboard-Header" className="flex-container">
           <div className="flex-item">
-            <h4 id="Dashboard-Slogan">Welcome {user}</h4>
+            <h4 id="Dashboard-Slogan">Welcome</h4>
           </div>
         </header>
         <section>
           <button>Make a new recipe?</button>
+        </section>
+        <section>
+          <Link
+            className="logout-button"
+            onClick={this.context.onLogout}
+            to="/"
+          >
+            Logout
+          </Link>
         </section>
         <section id="Dashboard-Buttons">
           <hr id="Connect-Divider" />

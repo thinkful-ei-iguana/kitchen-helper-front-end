@@ -98,7 +98,6 @@ class App extends React.Component {
           hasAuthToken: this.hasAuthToken,
           makeBasicAuthToken: this.makeBasicAuthToken,
           recipes: this.state.recipes,
-          makeBasicAuthToken: this.makeBasicAuthToken,
           onLogin: this.onLogin,
           onLogout: this.onLogout
         }}
@@ -125,13 +124,7 @@ class App extends React.Component {
                 return <Landing {...routeProps} />;
               }}
             />
-            <Route
-              exact
-              path="/Login"
-              render={routeProps => {
-                return <AccountLogin {...routeProps} />;
-              }}
-            />
+            <Route exact path="/Login" component={AccountLogin} />
             <Route
               exact
               path="/Create-Account"

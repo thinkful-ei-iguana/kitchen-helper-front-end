@@ -6,6 +6,7 @@ import Context from "../Components/Context";
 export default class CreateRecipe extends React.Component {
   static contextType = Context;
   static defaultProps = {
+    currentUser: {},
     location: {},
     history: {
       push: () => {}
@@ -25,8 +26,11 @@ export default class CreateRecipe extends React.Component {
 
   state = { error: null };
 
+  // created_by is === currentUser.id at time of recipe creation
+
   createSubmit = ev => {
     ev.preventDefault();
+    const created_by = this.context.currentUser.id;
     const {
       title,
       recipe_description,
@@ -39,13 +43,15 @@ export default class CreateRecipe extends React.Component {
       title: title.value,
       recipe_description: recipe_description.value,
       recipe_ingredients: recipe_ingredients.value,
-      time_to_make: time_to_make.value
+      time_to_make: time_to_make.value,
+      created_by: created_by.value
     })
       .then(recipe => {
         title.value = "";
         recipe_description.value = "";
         recipe_ingredients.value = "";
         time_to_make.value = "";
+        created_by.value = "";
         this.handleCreationSuccess();
       })
       .catch(res => {
@@ -65,9 +71,7 @@ export default class CreateRecipe extends React.Component {
               name="title"
               placeholder="Title"
             />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label">Title</span>
-            </span>
+            <span className="a-field__label-wrap"></span>
           </label>
           <label className="field a-field a-field_a2">
             <input
@@ -78,7 +82,7 @@ export default class CreateRecipe extends React.Component {
               placeholder="Recipe description"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Recipe description</span>
+              <span className="a-field__label"></span>
             </span>
           </label>
           <label className="field a-field a-field_a2">
@@ -90,7 +94,7 @@ export default class CreateRecipe extends React.Component {
               placeholder="Recipe ingredients"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Recipe ingredients</span>
+              <span className="a-field__label"></span>
             </span>
           </label>
           <label className="field a-field a-field_a2">
@@ -102,7 +106,7 @@ export default class CreateRecipe extends React.Component {
               placeholder="Time to make the recipe"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Time to make the recipe</span>
+              <span className="a-field__label"></span>
             </span>
           </label>
           <label className="field a-field a-field_a2">
@@ -114,12 +118,12 @@ export default class CreateRecipe extends React.Component {
               placeholder="Recipe image url"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Recipe Image</span>
+              <span className="a-field__label"></span>
             </span>
           </label>
           <div className="btn-row">
             <button className="submitLogin">Create recipe</button>
-            <Link to="/Landing">
+            <Link to="/Dashboard">
               <button className="newAccount">Cancel</button>
             </Link>
           </div>

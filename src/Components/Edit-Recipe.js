@@ -39,7 +39,7 @@ export default class CreateRecipe extends React.Component {
 
   handleEditSuccess = () => {
     const { history } = this.props;
-    history.push("/Landing");
+    history.push("/Dashboard");
   };
 
   editSubmit = ev => {
@@ -122,7 +122,7 @@ export default class CreateRecipe extends React.Component {
           </label>
           <div className="btn-row">
             <button className="submitLogin">Submit</button>
-            <Link to="/Landing">
+            <Link to="Dashboard">
               <button className="newAccount">Cancel</button>
             </Link>
           </div>
