@@ -22,19 +22,59 @@ const RecipeHelper = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
+  getRecipeOwnerData(ownerid) {
+    return fetch(`${config.API_ENDPOINT}/recipes/owner/${ownerid}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json"
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
+  search(term) {
+    return fetch(`${config.API_ENDPOINT}/recipes/search/${term}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json"
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
   delete(id) {
     return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${config.API_TOKEN}`
+        Authorization: `Bearer ${config.TOKEN_KEY}`
       }
     });
   },
-  getAllMyRecipes(user_name) {
-    return fetch(`${config.API_ENDPOINT}/recipes/${user_name}`).then(res =>
+  getAllMyRecipes(id) {
+    return fetch(`${config.API_ENDPOINT}/recipes/user/${id}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json"
+      }
+    }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
+  },
+  updateRecipe(updatedData, id) {
+    return fetch(`${config.API_ENDPOINT}/recipes/edit/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${config.TOKEN_KEY}`
+      },
+      body: JSON.stringify(updatedData)
+    });
   }
+
+  // get recipe by owner
+  // post recipe
+  // patch recipe
+  // delete recipe
 };
 
 export default RecipeHelper;

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Recipe from "../Helpers/Recipe";
 import Context from "../Components/Context";
+import RecipeHelper from "../Helpers/Recipe";
 
 export default class CreateRecipe extends React.Component {
   static contextType = Context;
@@ -12,20 +13,36 @@ export default class CreateRecipe extends React.Component {
     }
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipe: {}
+    };
+  }
+
+  ownerCheck = () => {
+    if (this.context.currentUser.id !== this.state.recipe.owner) {
+      return this.nonOwner();
+    } else {
+      return this.owner();
+    }
+  };
+
   componentDidMount() {
     if (!this.context.hasAuthToken()) {
       this.props.history.push("/Login");
     }
+    RecipeHelper.recipeById(this.props.match.params.recipeid).then(data => {
+      this.setState({ recipe: data });
+    });
   }
 
-  handleCreationSuccess = () => {
+  handleEditSuccess = () => {
     const { history } = this.props;
-    history.push("/Dashboard");
+    history.push("/Landing");
   };
 
-  state = { error: null };
-
-  createSubmit = ev => {
+  editSubmit = ev => {
     ev.preventDefault();
     const {
       title,
@@ -35,29 +52,39 @@ export default class CreateRecipe extends React.Component {
     } = ev.target;
 
     this.setState({ error: null });
-    Recipe.createRecipe({
-      title: title.value,
-      recipe_description: recipe_description.value,
-      recipe_ingredients: recipe_ingredients.value,
-      time_to_make: time_to_make.value
-    })
+    Recipe.updateRecipe(
+      {
+        title: title.value,
+        recipe_description: recipe_description.value,
+        recipe_ingredients: recipe_ingredients.value,
+        time_to_make: time_to_make.value,
+        owner: this.context.currentUser.id,
+        date_created: new Date()
+      },
+      this.state.recipe.id
+    )
       .then(recipe => {
         title.value = "";
         recipe_description.value = "";
         recipe_ingredients.value = "";
         time_to_make.value = "";
-        this.handleCreationSuccess();
+        this.handleEditSuccess();
       })
       .catch(res => {
         this.setState({ error: res.error });
       });
   };
 
-  render() {
+  nonOwner = () => {
+    console.log("rendering nonowner");
+    return <h2>Error: you're not the owner of this recipe</h2>;
+  };
+  owner = () => {
+    console.log("rendering owner");
     return (
       <div className="Creation">
         <header className="Creation-Header"></header>
-        <form className="Creation-Form" onSubmit={this.createSubmit}>
+        <form className="Creation-Form" onSubmit={this.editSubmit}>
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"
@@ -73,36 +100,12 @@ export default class CreateRecipe extends React.Component {
             <input
               className="field__input a-field__input"
               required
-              type="text"
-              name="recipe_description"
-              placeholder="Recipe description"
-            />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label">Recipe description</span>
-            </span>
-          </label>
-          <label className="field a-field a-field_a2">
-            <input
-              className="field__input a-field__input"
-              required
-              type="text"
-              name="recipe_ingredients"
-              placeholder="Recipe ingredients"
-            />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label">Recipe ingredients</span>
-            </span>
-          </label>
-          <label className="field a-field a-field_a2">
-            <input
-              className="field__input a-field__input"
-              required
               type="textfield"
-              name="time_to_make"
-              placeholder="Time to make the recipe"
+              name="recipe_description"
+              placeholder="Description"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Time to make the recipe</span>
+              <span className="a-field__label">Description</span>
             </span>
           </label>
           <label className="field a-field a-field_a2">
@@ -111,14 +114,14 @@ export default class CreateRecipe extends React.Component {
               required
               type="text"
               name="image"
-              placeholder="Recipe image url"
+              placeholder="Image url"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Recipe Image</span>
+              <span className="a-field__label">Image url</span>
             </span>
           </label>
           <div className="btn-row">
-            <button className="submitLogin">Create recipe</button>
+            <button className="submitLogin">Submit</button>
             <Link to="/Landing">
               <button className="newAccount">Cancel</button>
             </Link>
@@ -126,5 +129,8 @@ export default class CreateRecipe extends React.Component {
         </form>
       </div>
     );
+  };
+  render() {
+    return <div className="Edit">{this.ownerCheck()}</div>;
   }
 }

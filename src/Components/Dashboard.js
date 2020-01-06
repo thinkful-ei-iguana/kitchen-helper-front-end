@@ -17,12 +17,6 @@ export default class Dashboard extends React.Component {
       event.preventDefault(event);
     });
     const user = 12;
-    const frontPage = this.context.recipes;
-    const recipeCounter = () => {
-      this.setState({
-        counter: this.state.counter + 1
-      });
-    };
 
     return (
       <div className="Dashboard">

@@ -27,7 +27,7 @@ export default class DetailedView extends React.Component {
 
   deleteRecipe = () => {
     RecipeHelper.delete(this.props.match.params.recipeid).then(
-      this.props.history.push("/Home")
+      this.props.history.push("/Landing")
     );
   };
 

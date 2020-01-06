@@ -32,7 +32,7 @@ export default class DetailedView extends React.Component {
       data =>
         this.setState({
           profileData: data,
-          firstName: data.name.split(" ")[0]
+          firstName: data.first_name.split(" ")[0]
         })
     );
     RecipeHelper.getAllMyRecipes(this.props.match.params.user_name).then(data =>
@@ -47,7 +47,7 @@ export default class DetailedView extends React.Component {
   deleteAccount = () => {
     AuthHelper.deleteAccount(this.context.currentUser.user_name)
       .then(this.context.onLogout)
-      .then(this.props.history.push("/Home"));
+      .then(this.props.history.push("/Landing"));
   };
 
   accountOption = () => {
@@ -85,20 +85,16 @@ export default class DetailedView extends React.Component {
     return (
       <div className="Profile">
         <div className="section">
-          <h1 className="profile-name">MEET {this.state.first_name}</h1>
           <div className="container">
-            <a className="profile-email" href="#profile-email">
-              {this.state.profileData.email}
-            </a>
             <span className="profile-date_created">
-              Member Since: {this.state.profileData.date_created}
+              Member Since: {this.context.currentUser.date_created}
             </span>
           </div>
           {this.accountOption()}
         </div>
         <div className="section">
-          <h1>Want to make this?</h1>
-          <div className="container">{this.renderRecipe()}</div>
+          <h1>Your recipes:</h1>
+          <div className="container">I'm the recipes you've made!</div>
         </div>
       </div>
     );

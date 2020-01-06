@@ -45,7 +45,7 @@ const AuthHelper = {
       });
   },
   getPublicAccountData(user_name) {
-    return fetch(`${config.API_ENDPOINT}/accounts/public/${user_name}`, {
+    return fetch(`${config.API_ENDPOINT}/accounts/${user_name}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"

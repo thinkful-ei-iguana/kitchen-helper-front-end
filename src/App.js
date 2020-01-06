@@ -2,7 +2,6 @@ import React from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import NavMenu from "../src/Components/Nav-Menu";
 import Landing from "../src/Components/Landing";
-import Home from "../src/Components/Home";
 import AccountCreation from "../src/Components/Account-Creation";
 import AccountLogin from "../src/Components/Account-Login";
 import SearchResults from "../src/Components/Search-Results";
@@ -97,6 +96,7 @@ class App extends React.Component {
           saveAuthToken: this.saveAuthToken,
           getAuthToken: this.getAuthToken,
           hasAuthToken: this.hasAuthToken,
+          makeBasicAuthToken: this.makeBasicAuthToken,
           recipes: this.state.recipes,
           makeBasicAuthToken: this.makeBasicAuthToken,
           onLogin: this.onLogin,
@@ -120,9 +120,9 @@ class App extends React.Component {
             />
             <Route
               exact
-              path="/Home"
+              path="/Landing"
               render={routeProps => {
-                return <Home {...routeProps} />;
+                return <Landing {...routeProps} />;
               }}
             />
             <Route
@@ -139,6 +139,13 @@ class App extends React.Component {
                 return <AccountCreation {...routeProps} />;
               }}
             />
+            {/* <Route
+              exact
+              path="/Edit-Account"
+              render={routeProps => {
+                return <EditAccount {...routeProps} />;
+              }}
+            /> */}
             <Route
               exact
               path="/user/:username"
@@ -165,6 +172,13 @@ class App extends React.Component {
                 return;
               }}
             />
+            {/* <Route
+              exact
+              path="/Edit-Recipe/:recipeid"
+              render={routeProps => {
+                return <EditRecipe {...routeProps} />;
+              }}
+            /> */}
             <Route
               path="/Dashboard"
               render={routeProps => {

@@ -28,7 +28,7 @@ export default class NavMenu extends React.Component {
   render() {
     return (
       <header className="Nav-Header">
-        <Link to="/Home"></Link>
+        <Link to="/Landing"></Link>
         <button className="Open-Menu" onClick={this.toggleMenu}>
           <i className="fas fa-bars"></i>
           Menu
