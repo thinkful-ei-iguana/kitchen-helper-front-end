@@ -10,7 +10,7 @@ export default class DetailedView extends React.Component {
     super(props);
     this.state = {
       profileData: {},
-      userName: "",
+      firstName: "",
       myRecipes: []
     };
   }
@@ -29,15 +29,14 @@ export default class DetailedView extends React.Component {
   };
 
   componentDidMount() {
-    console.log("component mounted");
     AuthHelper.getPublicAccountData(this.props.match.params.user_name).then(
       data =>
-        this.setState({
+        this.context({
           profileData: data,
-          first_name: data.first_name.split(" ")[0]
+          firstName: data.first_name.split(" ")[0]
         }) +
         RecipeHelper.getAllMyRecipes(data.id).then(recipeData => {
-          this.setState({ myRecipes: recipeData });
+          this.context({ myRecipes: recipeData });
         })
     );
   }
@@ -70,10 +69,10 @@ export default class DetailedView extends React.Component {
   };
 
   renderRecipe = () => {
-    return this.state.myRecipes.map(recipe => {
+    return this.context.myRecipes.map(recipes => {
       return (
         <div className="food">
-          <Recipe key={recipe.title} {...recipe} />;
+          <Recipe key={recipes.id} {...recipes} />;
         </div>
       );
     });
@@ -82,21 +81,17 @@ export default class DetailedView extends React.Component {
   renderNoRecipes = () => {
     return (
       <h3 className="noRecipe">
-        {this.state.first_name} has no recipes currently
+        {this.context.currentUser.first_name} has no recipes currently
       </h3>
     );
   };
-  // if (this.state.myRecipes.length > 1) {
-  //   this.state.myRecipes.map(recipe => {});
-  // } else {
-  //   return (
-  //     <h3 className="noRecipe">
-  //       {this.props.match.params.user_name} has no recipes currently
-  //     </h3>
-  //   );
-  // }
+
+  // checkRecipeOwner = () => {
+  //   return <h3>{this.context.create_by.value}</h3>;
+  // };
 
   render() {
+    console.log(this.context);
     return (
       <>
         <div className="Profile">
@@ -117,7 +112,9 @@ export default class DetailedView extends React.Component {
         <div>
           {this.state.myRecipes.length > 0
             ? this.renderRecipe()
-            : this.renderNoRecipes()}
+            : this.renderNoRecipes()
+          // this.checkRecipeOwner())
+          }
         </div>
       </>
     );

@@ -16,6 +16,7 @@ export default class Landing extends React.Component {
     document.addEventListener("click", function(event) {
       event.preventDefault(event);
     });
+    // check here for the prevent default/submitting errors
 
     const frontPage = this.context.recipes;
     const recipeCounter = () => {

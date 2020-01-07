@@ -9,6 +9,7 @@ import AuthHelper from "../src/Helpers/Auth";
 import Context from "../src/Components/Context";
 import config from "./config";
 import CreateRecipe from "../src/Components/Create-Recipe";
+import EditRecipe from "../src/Components/Edit-Recipe";
 import Profile from "../src/Components/Profile";
 import Darkmode from "darkmode-js";
 // eslint-disable-next-line no-unused-vars
@@ -49,6 +50,7 @@ class App extends React.Component {
     }
     fetch("http://localhost:8000/api/recipes")
       .then(res => {
+        console.log("fetched recipes");
         return res.json();
       })
       .then(data => {
@@ -77,6 +79,7 @@ class App extends React.Component {
           isLoggedIn: true
         }))
     );
+    console.log("has logged in");
   };
 
   onLogout = () => {
@@ -165,13 +168,13 @@ class App extends React.Component {
                 return;
               }}
             />
-            {/* <Route
+            <Route
               exact
               path="/Edit-Recipe/:recipeid"
               render={routeProps => {
                 return <EditRecipe {...routeProps} />;
               }}
-            /> */}
+            />
           </Router>
         </div>
       </Context.Provider>

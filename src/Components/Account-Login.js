@@ -27,6 +27,9 @@ export default class Login extends React.Component {
     console.log("login submit has been called");
     this.setState({ error: null });
     const { user_name, password } = e.target;
+    console.log("Values entered");
+    console.log("userName: " + user_name.value);
+    console.log("password: " + password.value);
     AuthHelper.login({
       user_name: user_name.value.toLowerCase(),
       password: password.value

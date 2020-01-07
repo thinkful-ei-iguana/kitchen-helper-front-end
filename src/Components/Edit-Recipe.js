@@ -21,7 +21,7 @@ export default class CreateRecipe extends React.Component {
   }
 
   ownerCheck = () => {
-    if (this.context.currentUser.id !== this.state.recipe.owner) {
+    if (this.context.currentUser.id !== this.state.recipe.create_by) {
       return this.nonOwner();
     } else {
       return this.owner();

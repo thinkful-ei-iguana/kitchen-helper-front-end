@@ -25,15 +25,20 @@ export default class DesktopMenu extends React.Component {
         {this.context.isLoggedIn ? (
           <div className="Header__logged-in">
             <div className="dropdown">
-              <button className="dropbtn">
-                {this.context.currentUser.user_name}
+              <h4 className="dropbtn">
+                {" "}
+                Current user is: {this.context.currentUser.user_name}
                 <i className="fa fa-caret-down"></i>
-              </button>
+              </h4>
               <div className="dropdown-content">
                 <Link to={`/user/${this.context.currentUser.user_name}`}>
                   My Account
                 </Link>
+                <p></p>
                 <Link to="/Create-Recipe">Create Recipe</Link>
+                <p></p>
+                <Link to="Edit-Recipe/:1">Edit Recipe</Link>
+                <p></p>
                 <Link
                   className="logout-button"
                   onClick={this.context.onLogout}
@@ -41,6 +46,7 @@ export default class DesktopMenu extends React.Component {
                 >
                   Logout
                 </Link>
+                <p></p>
               </div>
             </div>
           </div>

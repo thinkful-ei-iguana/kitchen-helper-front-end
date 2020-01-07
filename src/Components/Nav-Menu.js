@@ -29,10 +29,6 @@ export default class NavMenu extends React.Component {
     return (
       <header className="Nav-Header">
         <Link to="/Landing"></Link>
-        <button className="Open-Menu" onClick={this.toggleMenu}>
-          <i className="fas fa-bars"></i>
-          Menu
-        </button>
         {isMobile() ? (
           <MobileMenu
             id="MobileMenu"

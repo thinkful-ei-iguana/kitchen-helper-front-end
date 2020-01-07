@@ -23,7 +23,7 @@ const RecipeHelper = {
     );
   },
   getRecipeOwnerData(ownerid) {
-    return fetch(`${config.API_ENDPOINT}/recipes/owner/${ownerid}`, {
+    return fetch(`${config.API_ENDPOINT}/recipes/accounts/${ownerid}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"

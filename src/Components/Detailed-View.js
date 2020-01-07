@@ -32,7 +32,7 @@ export default class DetailedView extends React.Component {
   };
 
   deleteOption = () => {
-    if (this.context.currentUser.user_name === this.state.recipe.owner) {
+    if (this.context.currentUser.id === this.state.recipe.create_by) {
       return <button onClick={this.deleteRecipe}>Delete Recipe</button>;
     }
   };
@@ -55,11 +55,8 @@ export default class DetailedView extends React.Component {
         </p>
         <div className="owner">
           <span>Posted By: </span>
-          <Link
-            to={`/user/${this.state.recipe.owner}`}
-            className="recipe-owner"
-          >
-            {this.state.recipe.owner}
+          <Link to={`/user/${this.state.recipe.id}`} className="recipe-owner">
+            {this.state.recipe.id}
           </Link>
         </div>
         <div>{this.deleteOption()}</div>
