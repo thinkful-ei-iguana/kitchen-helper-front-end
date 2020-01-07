@@ -5,6 +5,7 @@ import Landing from "../src/Components/Landing";
 import AccountCreation from "../src/Components/Account-Creation";
 import AccountLogin from "../src/Components/Account-Login";
 import SearchResults from "../src/Components/Search-Results";
+import Home from "../src/Components/Home";
 import AuthHelper from "../src/Helpers/Auth";
 import Context from "../src/Components/Context";
 import config from "./config";
@@ -14,6 +15,7 @@ import Profile from "../src/Components/Profile";
 import Darkmode from "darkmode-js";
 // eslint-disable-next-line no-unused-vars
 import DesktopMenu from "./Components/Mobile-Menu";
+import DetailedView from "../src/Components/Detailed-View";
 const options = {
   bottom: "64px", // default: '32px'
   right: "32px",
@@ -50,7 +52,6 @@ class App extends React.Component {
     }
     fetch("http://localhost:8000/api/recipes")
       .then(res => {
-        console.log("fetched recipes");
         return res.json();
       })
       .then(data => {
@@ -122,9 +123,9 @@ class App extends React.Component {
             />
             <Route
               exact
-              path="/Landing"
+              path="/Home"
               render={routeProps => {
-                return <Landing {...routeProps} />;
+                return <Home {...routeProps} />;
               }}
             />
             <Route exact path="/Login" component={AccountLogin} />
@@ -165,7 +166,7 @@ class App extends React.Component {
             <Route
               path="/recipe/:recipeid"
               render={routeProps => {
-                return;
+                return <DetailedView {...routeProps} />;
               }}
             />
             <Route

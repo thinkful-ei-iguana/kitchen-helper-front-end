@@ -17,9 +17,7 @@ export default class DesktopMenu extends React.Component {
         `/search/${this.state.searchText}`
       );
     };
-    // const refreshPage = () => {
-    //   window.location.reload(false);
-    // };
+
     return (
       <div className="desktopMenu">
         {this.context.isLoggedIn ? (
@@ -37,7 +35,7 @@ export default class DesktopMenu extends React.Component {
                 <p></p>
                 <Link to="/Create-Recipe">Create Recipe</Link>
                 <p></p>
-                <Link to="Edit-Recipe/:1">Edit Recipe</Link>
+                {/* <Link to="Edit-Recipe/3">Edit Recipe</Link> */}
                 <p></p>
                 <Link
                   className="logout-button"

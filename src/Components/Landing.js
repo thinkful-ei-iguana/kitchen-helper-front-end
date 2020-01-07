@@ -2,6 +2,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
 import Context from "../Components/Context";
+import RecentResults from "./Recent-Results";
 
 export default class Landing extends React.Component {
   static contextType = Context;
@@ -33,7 +34,29 @@ export default class Landing extends React.Component {
           </div>
         </header>
         <section id="landingDocumentation">
-          <div id="FAQ">
+          <RecentResults />
+        </section>
+        <section id="Landing-Buttons">
+          <hr id="Connect-Divider" />
+          <div id="buttons">
+            <a href="https://github.com" target="blank_">
+              <i className="fab fa-github"></i>
+            </a>
+            <a href="https://github.com" target="blank_">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com" target="blank_">
+              <i className="fas fa-desktop"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+    );
+  }
+}
+
+{
+  /* <div id="FAQ">
             <h2 id="FAQ-H2">{frontPage[0].title}</h2>
             <button
               id="RecipeOne"
@@ -76,23 +99,5 @@ export default class Landing extends React.Component {
               Number of recipes you've made:
               <span id="recipeMadeCount"> {this.state.counter}</span>
             </h2>
-          </div>
-        </section>
-        <section id="Landing-Buttons">
-          <hr id="Connect-Divider" />
-          <div id="buttons">
-            <a href="https://github.com" target="blank_">
-              <i className="fab fa-github"></i>
-            </a>
-            <a href="https://github.com" target="blank_">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com" target="blank_">
-              <i className="fas fa-desktop"></i>
-            </a>
-          </div>
-        </section>
-      </div>
-    );
-  }
+          </div> */
 }

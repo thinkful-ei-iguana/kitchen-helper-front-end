@@ -27,9 +27,6 @@ export default class Login extends React.Component {
     console.log("login submit has been called");
     this.setState({ error: null });
     const { user_name, password } = e.target;
-    console.log("Values entered");
-    console.log("userName: " + user_name.value);
-    console.log("password: " + password.value);
     AuthHelper.login({
       user_name: user_name.value.toLowerCase(),
       password: password.value
@@ -51,13 +48,7 @@ export default class Login extends React.Component {
     return (
       <div className="Login">
         <header className="Login-Header"></header>
-        <form
-          className="Login-Form"
-          onSubmit={e => {
-            console.log("called");
-            this.loginSubmit(e);
-          }}
-        >
+        <form className="Login-Form" onSubmit={this.loginSubmit}>
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Recipe from "../Components/Recipe";
 import Context from "../Components/Context";
 
-export default class DetailedView extends React.Component {
+export default class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,16 +29,17 @@ export default class DetailedView extends React.Component {
   };
 
   componentDidMount() {
-    AuthHelper.getPublicAccountData(this.props.match.params.user_name).then(
-      data =>
-        this.context({
-          profileData: data,
-          firstName: data.first_name.split(" ")[0]
-        }) +
-        RecipeHelper.getAllMyRecipes(data.id).then(recipeData => {
-          this.context({ myRecipes: recipeData });
-        })
-    );
+    console.log(this.context);
+    // AuthHelper.getPublicAccountData(this.props.match.params.user_name).then(
+    //   data =>
+    //     this.context({
+    //       profileData: data,
+    //       firstName: data.first_name.split(" ")[0]
+    //     }) +
+    //     RecipeHelper.getAllMyRecipes(data.id).then(recipeData => {
+    //       this.context({ myRecipes: recipeData });
+    //     })
+    // );
   }
 
   editAccount = () => {
@@ -50,6 +51,9 @@ export default class DetailedView extends React.Component {
       .then(this.context.onLogout)
       .then(this.props.history.push("/"));
   };
+
+  // if/else if make sure that owner.value === account.id then show recipes with matching owner
+  //if no matching recipes render noRecipes
 
   accountOption = () => {
     if (
@@ -68,11 +72,11 @@ export default class DetailedView extends React.Component {
     }
   };
 
-  renderRecipe = () => {
-    return this.context.myRecipes.map(recipes => {
+  renderRecipe = recipes => {
+    return recipes.map(recipe => {
       return (
         <div className="food">
-          <Recipe key={recipes.id} {...recipes} />;
+          <Recipe key={recipe.id} {...recipe} />;
         </div>
       );
     });
@@ -86,12 +90,25 @@ export default class DetailedView extends React.Component {
     );
   };
 
-  // checkRecipeOwner = () => {
-  //   return <h3>{this.context.create_by.value}</h3>;
-  // };
+  checkRecipeOwner = () => {
+    return (
+      <h3>
+        {this.context.recipes.owner.filter(
+          recipe => recipe.owner === this.context.currentUser.id
+        )}
+        ;
+      </h3>
+    );
+  };
 
   render() {
+    if (!this.context.isLoggedIn) {
+      return <p>Nobody is logged in</p>;
+    }
     console.log(this.context);
+    const recipesOwned = this.context.recipes.filter(
+      recipe => recipe.owner === this.context.currentUser.id
+    );
     return (
       <>
         <div className="Profile">
@@ -110,8 +127,8 @@ export default class DetailedView extends React.Component {
           {this.accountOption()}
         </div>
         <div>
-          {this.state.myRecipes.length > 0
-            ? this.renderRecipe()
+          {recipesOwned.length > 0
+            ? this.renderRecipe(recipesOwned)
             : this.renderNoRecipes()
           // this.checkRecipeOwner())
           }

@@ -13,6 +13,7 @@ const RecipeHelper = {
     );
   },
   recipeById(id) {
+    console.log(id);
     return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "GET",
       headers: {
@@ -23,7 +24,8 @@ const RecipeHelper = {
     );
   },
   getRecipeOwnerData(ownerid) {
-    return fetch(`${config.API_ENDPOINT}/recipes/accounts/${ownerid}`, {
+    console.log("getting recipe by owner");
+    return fetch(`${config.API_ENDPOINT}/recipes/owner/${ownerid}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"
@@ -33,6 +35,7 @@ const RecipeHelper = {
     );
   },
   search(term) {
+    console.log("searching by recipe title");
     return fetch(`${config.API_ENDPOINT}/recipes/search/${term}`, {
       method: "GET",
       headers: {
@@ -43,6 +46,7 @@ const RecipeHelper = {
     );
   },
   delete(id) {
+    console.log("deleting recipe by id");
     return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "DELETE",
       headers: {
@@ -51,6 +55,7 @@ const RecipeHelper = {
     });
   },
   getAllMyRecipes(id) {
+    console.log("getting all recipes by owner id");
     return fetch(`${config.API_ENDPOINT}/recipes/user/${id}`, {
       method: "GET",
       headers: {
@@ -61,6 +66,7 @@ const RecipeHelper = {
     );
   },
   updateRecipe(updatedData, id) {
+    console.log("updating recipe");
     return fetch(`${config.API_ENDPOINT}/recipes/edit/${id}`, {
       method: "PATCH",
       headers: {

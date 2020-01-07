@@ -20,22 +20,25 @@ export default class CreateRecipe extends React.Component {
     };
   }
 
-  ownerCheck = () => {
-    if (this.context.currentUser.id !== this.state.recipe.create_by) {
-      return this.nonOwner();
-    } else {
-      return this.owner();
-    }
-  };
-
   componentDidMount() {
     if (!this.context.hasAuthToken()) {
       this.props.history.push("/Login");
     }
     RecipeHelper.recipeById(this.props.match.params.recipeid).then(data => {
       this.setState({ recipe: data });
+      console.log(this.state.recipe);
     });
   }
+
+  ownerCheck = () => {
+    console.log(this.context.currentUser);
+    console.log(this.state);
+    if (this.context.currentUser.id !== this.state.recipe.owner) {
+      return this.nonOwner();
+    } else {
+      return this.owner();
+    }
+  };
 
   handleEditSuccess = () => {
     const { history } = this.props;
@@ -76,9 +79,9 @@ export default class CreateRecipe extends React.Component {
   };
 
   nonOwner = () => {
-    console.log("rendering nonowner");
     return <h2>Error: you're not the owner of this recipe</h2>;
   };
+
   owner = () => {
     console.log("rendering owner");
     return (

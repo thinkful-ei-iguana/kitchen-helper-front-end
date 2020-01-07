@@ -41,6 +41,7 @@ export default class CreateRecipe extends React.Component {
     this.setState({ error: null });
     Recipe.createRecipe({
       title: title.value,
+      owner: this.context.currentUser.id,
       recipe_description: recipe_description.value,
       recipe_ingredients: recipe_ingredients.value,
       time_to_make: time_to_make.value,
@@ -51,7 +52,6 @@ export default class CreateRecipe extends React.Component {
         recipe_description.value = "";
         recipe_ingredients.value = "";
         time_to_make.value = "";
-        created_by.value = "";
         this.handleCreationSuccess();
       })
       .catch(res => {
