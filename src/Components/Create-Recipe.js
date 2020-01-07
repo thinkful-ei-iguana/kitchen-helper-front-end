@@ -21,7 +21,7 @@ export default class CreateRecipe extends React.Component {
 
   handleCreationSuccess = () => {
     const { history } = this.props;
-    history.push("/Dashboard");
+    history.push("/");
   };
 
   state = { error: null };
@@ -123,7 +123,7 @@ export default class CreateRecipe extends React.Component {
           </label>
           <div className="btn-row">
             <button className="submitCreateRecipe">Create recipe</button>
-            <Link to="/Dashboard">
+            <Link to="/">
               <button className="newAccount">Cancel</button>
             </Link>
           </div>

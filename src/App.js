@@ -11,7 +11,6 @@ import config from "./config";
 import CreateRecipe from "../src/Components/Create-Recipe";
 import Profile from "../src/Components/Profile";
 import Darkmode from "darkmode-js";
-import Dashboard from "../src/Components/Dashboard";
 // eslint-disable-next-line no-unused-vars
 import DesktopMenu from "./Components/Mobile-Menu";
 const options = {
@@ -173,12 +172,6 @@ class App extends React.Component {
                 return <EditRecipe {...routeProps} />;
               }}
             /> */}
-            <Route
-              path="/Dashboard"
-              render={routeProps => {
-                return <Dashboard {...routeProps} />;
-              }}
-            />
           </Router>
         </div>
       </Context.Provider>
