@@ -16,6 +16,7 @@ import Darkmode from "darkmode-js";
 // eslint-disable-next-line no-unused-vars
 import DesktopMenu from "./Components/Mobile-Menu";
 import DetailedView from "../src/Components/Detailed-View";
+
 const options = {
   bottom: "64px", // default: '32px'
   right: "32px",

@@ -2,6 +2,7 @@ import React from "react";
 import RecipeHelper from "../Helpers/Recipe";
 import { Link } from "react-router-dom";
 import Context from "../Components/Context";
+import "../Styles/Buttons.css";
 
 export default class DetailedView extends React.Component {
   constructor(props) {
@@ -38,7 +39,13 @@ export default class DetailedView extends React.Component {
 
   deleteOption = () => {
     if (this.context.currentUser.id === this.state.recipe.owner) {
-      return <button onClick={this.deleteRecipe}>Delete Recipe</button>;
+      return (
+        <div className="delete-recipe-button-div">
+          <button className="delete-recipe-button" onClick={this.deleteRecipe}>
+            Delete Recipe
+          </button>
+        </div>
+      );
     }
   };
 
@@ -79,6 +86,9 @@ export default class DetailedView extends React.Component {
         </span>
         <div>{this.deleteOption()}</div>
         <div>{this.ownerOption()}</div>
+        <Link to="/">
+          <button className="cancel-view">Cancel</button>
+        </Link>
       </div>
     );
   }

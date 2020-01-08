@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Recipe from "../Helpers/Recipe";
 import Context from "../Components/Context";
+import "../Styles/Buttons.css";
 
 export default class CreateRecipe extends React.Component {
   static contextType = Context;
@@ -121,8 +122,8 @@ export default class CreateRecipe extends React.Component {
           </label>
           <div className="btn-row">
             <button className="submitCreateRecipe">Create recipe</button>
-            <Link to="/">
-              <button className="newAccount">Cancel</button>
+            <Link to="">
+              <button className="cancelEditRecipe">Cancel</button>
             </Link>
           </div>
         </form>

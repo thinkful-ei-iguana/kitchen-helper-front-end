@@ -40,15 +40,16 @@
 }
 
 .ThingRecipeItem {
+  align-content: center;
   background: var(--alt-bg);
   display: flex;
   flex-direction: column;
-  border: 0;
   font-size: smaller;
   text-decoration: none;
   box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
   margin-bottom: 40px;
   margin-right: 200px;
+  border: black solid 2px;
   border-radius: 10px;
   transition: all 0.5s;
 }
@@ -57,23 +58,18 @@
   cursor: pointer;
   opacity: 50%;
   transition: all 0.5s;
-  background-color: grey;
+  background-color: rgb(42, 100, 30);
 }
 
 .ThingRecipeItem,
 .ThingRecipeItem:visited {
   color: var(--alt-text);
-}
-
-.ThingRecipeItem__image {
-  height: 250px;
-  width: 100%;
-  border-radius: 10px 10px 0 0;
-  background-size: cover;
-  background-position: 50% 50%;
+  align-content: center;
+  text-align: center;
 }
 
 .ThingRecipeItem__details {
+  align-content: center;
   padding: 10px;
   display: flex;
   flex: 1;

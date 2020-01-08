@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Recipe from "../Helpers/Recipe";
 import Context from "../Components/Context";
 import RecipeHelper from "../Helpers/Recipe";
-
+import "../Styles/Buttons.css";
 export default class CreateRecipe extends React.Component {
   static contextType = Context;
   static defaultProps = {
@@ -132,8 +132,8 @@ export default class CreateRecipe extends React.Component {
           </label>
           <div className="btn-row">
             <button className="submitRecipeEdit">Submit</button>
-            <Link to="">
-              <button className="newAccount">Cancel</button>
+            <Link to="/">
+              <button className="cancelEditRecipe">Cancel</button>
             </Link>
           </div>
         </form>

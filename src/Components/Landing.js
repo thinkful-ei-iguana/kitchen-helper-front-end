@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Context from "../Components/Context";
 import RecentResults from "./Recent-Results";
+import "../Styles/Home.css";
 
 export default class Landing extends React.Component {
   static contextType = Context;
@@ -22,7 +23,9 @@ export default class Landing extends React.Component {
       <div className="Landing">
         <header id="Landing-Header" className="flex-container">
           <div className="flex-item">
-            <h4 id="Landing-Slogan">Make fun foods with friends!</h4>
+            <h4 id="Landing-Slogan" align="center">
+              Make fun foods with friends!
+            </h4>
           </div>
         </header>
         <section id="landingDocumentation">
