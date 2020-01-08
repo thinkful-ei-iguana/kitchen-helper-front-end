@@ -57,8 +57,8 @@ export default class Profile extends React.Component {
   renderRecipe = recipes => {
     return recipes.map(recipe => {
       return (
-        <div className="food-item">
-          <Recipe key={recipe.id} {...recipe} />;
+        <div key={recipe.id} className="food-item">
+          <Recipe {...recipe} />;
         </div>
       );
     });
@@ -87,7 +87,6 @@ export default class Profile extends React.Component {
     if (!this.context.isLoggedIn) {
       return <p>Nobody is logged in</p>;
     }
-    console.log(this.context);
     const recipesOwned = this.context.recipes.filter(
       recipe => recipe.owner === this.context.currentUser.id
     );

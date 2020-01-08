@@ -26,17 +26,16 @@ const RecipeHelper = {
   // ${this.recipes.filter(
   //   recipes => recipes.owner === this.recipes.owner
   // )}
+
   getRecipeOwnerData(id) {
-    // console.log("recipe owner requested");
-    return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
+    console.log(id);
+    return fetch(`${config.API_ENDPOINT}/recipe/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"
       }
     }).then(res =>
-      !res.ok + console.log(res)
-        ? res.json().then(e => Promise.reject(e))
-        : res.json()
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
   search(term) {
@@ -59,6 +58,7 @@ const RecipeHelper = {
   },
 
   getAllMyRecipes(owner) {
+    console.log(owner, "hi");
     console.log("I'm supposed to get every recipe");
     return fetch(`${config.API_ENDPOINT}/recipes/user/${owner}`, {
       method: "GET",
