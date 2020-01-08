@@ -36,7 +36,6 @@ export default class Login extends React.Component {
         password.value = "";
         this.context.saveAuthToken(res.authToken);
         this.context.onLogin();
-        // should be done in state
         this.props.history.push("/");
       })
       .catch(res => {
@@ -45,6 +44,7 @@ export default class Login extends React.Component {
   };
 
   render() {
+    console.log("login inside render");
     return (
       <div className="Login">
         <header className="Login-Header"></header>
@@ -73,9 +73,7 @@ export default class Login extends React.Component {
             </span>
           </label>
           <div className="btn-row">
-            <button type="submit" className="submitLogin">
-              Login
-            </button>
+            <input type="submit" className="submitLogin" value="login" />
             <Link to="/Create-Account">
               <button className="newAccount">Create an account</button>
             </Link>
