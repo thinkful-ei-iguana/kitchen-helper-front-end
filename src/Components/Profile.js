@@ -1,6 +1,5 @@
 import React from "react";
 import AuthHelper from "../Helpers/Auth";
-import RecipeHelper from "../Helpers/Recipe";
 import { Link } from "react-router-dom";
 import Recipe from "../Components/Recipe";
 import Context from "../Components/Context";
@@ -28,20 +27,6 @@ export default class Profile extends React.Component {
     return text;
   };
 
-  componentDidMount() {
-    console.log(this.context);
-    // AuthHelper.getPublicAccountData(this.props.match.params.user_name).then(
-    //   data =>
-    //     this.context({
-    //       profileData: data,
-    //       firstName: data.first_name.split(" ")[0]
-    //     }) +
-    //     RecipeHelper.getAllMyRecipes(data.id).then(recipeData => {
-    //       this.context({ myRecipes: recipeData });
-    //     })
-    // );
-  }
-
   editAccount = () => {
     console.log("not setup yet");
   };
@@ -51,9 +36,6 @@ export default class Profile extends React.Component {
       .then(this.context.onLogout)
       .then(this.props.history.push("/"));
   };
-
-  // if/else if make sure that owner.value === account.id then show recipes with matching owner
-  //if no matching recipes render noRecipes
 
   accountOption = () => {
     if (
@@ -75,7 +57,7 @@ export default class Profile extends React.Component {
   renderRecipe = recipes => {
     return recipes.map(recipe => {
       return (
-        <div className="food">
+        <div className="food-item">
           <Recipe key={recipe.id} {...recipe} />;
         </div>
       );
@@ -122,7 +104,6 @@ export default class Profile extends React.Component {
           </div>
           <div className="section">
             <h1>Your recipes:</h1>
-            <div className="container">I'm the recipes you've made!</div>
           </div>
           {this.accountOption()}
         </div>

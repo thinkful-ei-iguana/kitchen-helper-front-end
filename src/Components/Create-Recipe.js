@@ -26,8 +26,6 @@ export default class CreateRecipe extends React.Component {
 
   state = { error: null };
 
-  // created_by is === currentUser.id at time of recipe creation
-
   createSubmit = e => {
     e.preventDefault();
     const created_by = this.context.currentUser.id;

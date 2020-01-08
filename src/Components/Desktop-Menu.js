@@ -11,13 +11,6 @@ export default class DesktopMenu extends React.Component {
     };
   }
   render() {
-    const viewRecipe = event => {
-      event.preventDefault();
-      return this.props.routeProps.history.push(
-        `/search/${this.state.searchText}`
-      );
-    };
-
     return (
       <div className="desktopMenu">
         {this.context.isLoggedIn ? (
@@ -57,24 +50,6 @@ export default class DesktopMenu extends React.Component {
             <p></p>
           </div>
         )}
-        <form className="Desktop-Menu-UserSearchForm">
-          <label className="field a-field a-field_a2">
-            <input
-              onInput={e => {
-                this.setState({ searchText: e.target.value });
-              }}
-              className="field__input a-field__input"
-              placeholder="Search"
-              required
-            />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label"></span>
-            </span>
-          </label>
-          <button type="submit" onClick={viewRecipe}>
-            Search
-          </button>
-        </form>
       </div>
     );
   }

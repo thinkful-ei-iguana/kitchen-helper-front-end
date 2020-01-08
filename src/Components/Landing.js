@@ -17,14 +17,6 @@ export default class Landing extends React.Component {
     document.addEventListener("click", function(event) {
       event.preventDefault(event);
     });
-    // check here for the prevent default/submitting errors
-
-    const frontPage = this.context.recipes;
-    const recipeCounter = () => {
-      this.setState({
-        counter: this.state.counter + 1
-      });
-    };
 
     return (
       <div className="Landing">
@@ -53,51 +45,4 @@ export default class Landing extends React.Component {
       </div>
     );
   }
-}
-
-{
-  /* <div id="FAQ">
-            <h2 id="FAQ-H2">{frontPage[0].title}</h2>
-            <button
-              id="RecipeOne"
-              onClick={e => {
-                recipeCounter();
-              }}
-            >
-              Make this recipe?
-            </button>
-            <p id="FAQ-P">{frontPage[0].recipe_description}</p>
-          </div>
-          <hr id="Landing-Divider" />
-          <div id="FAQ">
-            <h2 id="FAQ-H2">{frontPage[1].title}</h2>
-            <button
-              id="RecipeTwo"
-              onClick={e => {
-                recipeCounter();
-              }}
-            >
-              Make this recipe?
-            </button>
-            <p id="FAQ-P">{frontPage[1].recipe_description}</p>
-          </div>
-          <hr id="Landing-Divider" />
-          <div id="FAQ">
-            <h2 id="FAQ-H2">{frontPage[2].title}</h2>
-            <button
-              id="RecipeThree"
-              onClick={e => {
-                recipeCounter();
-              }}
-            >
-              Make this recipe?
-            </button>
-            <p id="FAQ-P">{frontPage[2].recipe_description}</p>
-          </div>
-          <div>
-            <h2>
-              Number of recipes you've made:
-              <span id="recipeMadeCount"> {this.state.counter}</span>
-            </h2>
-          </div> */
 }

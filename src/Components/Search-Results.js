@@ -8,7 +8,6 @@ export default class SearchResults extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.location);
     fetch(
       `http://localhost:8000/api/recipes/${
         this.props.location.pathname.split("/")[2]
@@ -16,7 +15,6 @@ export default class SearchResults extends React.Component {
     )
       .then(res => res.json())
       .then(json => {
-        console.log(json);
         this.setState({ recipeSearch: json });
       });
   }

@@ -52,16 +52,12 @@ export default class DetailedView extends React.Component {
           >
             Edit Recipe
           </Link>
-          <button className="deleteRecipe" onClick={this.deleteRecipe}>
-            Delete Recipe
-          </button>
         </div>
       );
     }
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="view">
         <div className="image-container">
@@ -79,11 +75,8 @@ export default class DetailedView extends React.Component {
         </h4>
         <h5 className="recipeOwner">{this.state.recipe.owner}</h5>
         <span className="recipe-date_created">
-          Posted On: {this.state.recipe.date_created}
+          Date Created: {this.state.recipe.date_created}
         </span>
-        <p className="recipe-description">
-          {this.state.recipe.recipe_description}
-        </p>
         <div>{this.deleteOption()}</div>
         <div>{this.ownerOption()}</div>
       </div>

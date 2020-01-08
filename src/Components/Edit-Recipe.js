@@ -26,13 +26,10 @@ export default class CreateRecipe extends React.Component {
     }
     RecipeHelper.recipeById(this.props.match.params.recipeid).then(data => {
       this.setState({ recipe: data });
-      console.log(this.state.recipe);
     });
   }
 
   ownerCheck = () => {
-    console.log(this.context.currentUser);
-    console.log(this.state);
     if (this.context.currentUser.id !== this.state.recipe.owner) {
       return this.nonOwner();
     } else {
@@ -47,21 +44,24 @@ export default class CreateRecipe extends React.Component {
 
   editSubmit = ev => {
     ev.preventDefault();
-    const {
+    const title = ev.target.title.value;
+    const recipe_description = ev.target.recipe_description.value;
+    const recipe_ingredients = ev.target.recipe_ingredients.value;
+    const time_to_make = ev.target.time_to_make.value;
+    console.log(
+      "edit submit values",
       title,
       recipe_description,
       recipe_ingredients,
       time_to_make
-    } = ev.target;
-
+    );
     this.setState({ error: null });
     Recipe.updateRecipe(
       {
-        title: title.value,
-        recipe_description: recipe_description.value,
-        recipe_ingredients: recipe_ingredients.value,
-        time_to_make: time_to_make.value,
-        owner: this.context.currentUser.id,
+        title,
+        recipe_description,
+        recipe_ingredients,
+        time_to_make,
         date_created: new Date()
       },
       this.state.recipe.id
@@ -83,7 +83,6 @@ export default class CreateRecipe extends React.Component {
   };
 
   owner = () => {
-    console.log("rendering owner");
     return (
       <div className="Creation">
         <header className="Creation-Header"></header>
@@ -96,7 +95,7 @@ export default class CreateRecipe extends React.Component {
               placeholder="Title"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Title</span>
+              <span className="a-field__label"></span>
             </span>
           </label>
           <label className="field a-field a-field_a2">
@@ -108,20 +107,28 @@ export default class CreateRecipe extends React.Component {
               placeholder="Description"
             />
             <span className="a-field__label-wrap">
-              <span className="a-field__label">Description</span>
+              <span className="a-field__label"></span>
             </span>
           </label>
-          <label className="field a-field a-field_a2">
+          <label>
             <input
               className="field__input a-field__input"
               required
               type="text"
-              name="image"
-              placeholder="Image url"
+              name="recipe_ingredients"
+              placeholder="Ingredients"
             />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label">Image url</span>
-            </span>
+            <span className="a-field__label"></span>
+          </label>
+          <label>
+            <input
+              className="field__input a-field__input"
+              required
+              type="text"
+              name="time_to_make"
+              placeholder="Time to make the recipe?"
+            />
+            <span className="a-field__label"></span>
           </label>
           <div className="btn-row">
             <button className="submitRecipeEdit">Submit</button>
