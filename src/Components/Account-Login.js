@@ -24,7 +24,6 @@ export default class Login extends React.Component {
 
   loginSubmit = e => {
     e.preventDefault();
-    console.log("login submit has been called");
     this.setState({ error: null });
     const { user_name, password } = e.target;
     AuthHelper.login({
@@ -43,18 +42,36 @@ export default class Login extends React.Component {
       });
   };
 
+  userNameChanged = e => {
+    console.log("The user name has changed");
+  };
+  passwordHasChanged = e => {
+    console.log("The password has changed");
+  };
+  submitButtonHasBeenClicked = e => {
+    console.log("The submit button has been clicked");
+  };
+  submitButtonHasBeenHovered = e => {
+    console.log("The submit button has been hovered");
+  };
+
   render() {
-    console.log("login inside render");
     return (
       <div className="Login">
         <header className="Login-Header"></header>
-        <form className="Login-Form" onSubmit={this.loginSubmit}>
+        <form
+          className="Login-Form"
+          onSubmit={this.loginSubmit}
+          onMouseOver={this.submitButtonHasBeenHovered}
+          onClick={console.log("Submit has been clicked")}
+        >
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"
               required
               name="user_name"
               placeholder="Username"
+              onChange={this.userNameChanged}
             />
             <span className="a-field__label-wrap">
               <span className="a-field__label">Username</span>
@@ -67,13 +84,19 @@ export default class Login extends React.Component {
               name="password"
               type="password"
               placeholder="Password"
+              onChange={this.passwordHasChanged}
             />
             <span className="a-field__label-wrap">
               <span className="a-field__label">Password</span>
             </span>
           </label>
           <div className="btn-row">
-            <input type="submit" className="submitLogin" value="login" />
+            <input
+              type="submit"
+              className="submitLogin"
+              value="login"
+              onClick={this.submitButtonHasBeenClicked}
+            />
             <Link to="/Create-Account">
               <button className="newAccount">Create an account</button>
             </Link>

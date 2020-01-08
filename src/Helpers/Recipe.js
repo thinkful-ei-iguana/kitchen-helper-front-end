@@ -13,6 +13,7 @@ const RecipeHelper = {
     );
   },
   recipeById(id) {
+    // console.log("getting recipe by id");
     return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "GET",
       headers: {
@@ -22,14 +23,20 @@ const RecipeHelper = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  getRecipeOwnerData(ownerid) {
-    return fetch(`${config.API_ENDPOINT}/recipes/owner/${ownerid}`, {
+  // ${this.recipes.filter(
+  //   recipes => recipes.owner === this.recipes.owner
+  // )}
+  getRecipeOwnerData(id) {
+    // console.log("recipe owner requested");
+    return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"
       }
     }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+      !res.ok + console.log(res)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
     );
   },
   search(term) {
@@ -50,8 +57,10 @@ const RecipeHelper = {
       }
     });
   },
-  getAllMyRecipes(id) {
-    return fetch(`${config.API_ENDPOINT}/recipes/user/${id}`, {
+
+  getAllMyRecipes(owner) {
+    console.log("I'm supposed to get every recipe");
+    return fetch(`${config.API_ENDPOINT}/recipes/user/${owner}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"

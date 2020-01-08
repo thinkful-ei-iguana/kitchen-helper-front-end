@@ -128,7 +128,13 @@ class App extends React.Component {
                 return <Home {...routeProps} />;
               }}
             />
-            <Route exact path="/Login" component={AccountLogin} />
+            <Route
+              exact
+              path="/Login"
+              render={routeProps => {
+                return <AccountLogin {...routeProps} />;
+              }}
+            />
             <Route
               exact
               path="/Create-Account"
