@@ -15,11 +15,9 @@ export default class Login extends React.Component {
   state = { error: null };
 
   onLoginSuccess = () => {
-    console.log("success");
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/Home";
     history.push(destination);
-    console.log(destination);
   };
 
   loginSubmit = e => {
@@ -42,18 +40,18 @@ export default class Login extends React.Component {
       });
   };
 
-  userNameChanged = e => {
-    console.log("The user name has changed");
-  };
-  passwordHasChanged = e => {
-    console.log("The password has changed");
-  };
-  submitButtonHasBeenClicked = e => {
-    console.log("The submit button has been clicked");
-  };
-  submitButtonHasBeenHovered = e => {
-    console.log("The submit button has been hovered");
-  };
+  // userNameChanged = e => {
+  //   console.log("The user name has changed");
+  // };
+  // passwordHasChanged = e => {
+  //   console.log("The password has changed");
+  // };
+  // submitButtonHasBeenClicked = e => {
+  //   console.log("The submit button has been clicked");
+  // };
+  // submitButtonHasBeenHovered = e => {
+  //   console.log("The submit button has been hovered");
+  // };
 
   render() {
     return (

@@ -28,7 +28,6 @@ const RecipeHelper = {
   // )}
 
   getRecipeOwnerData(id) {
-    console.log(id);
     return fetch(`${config.API_ENDPOINT}/recipe/${id}`, {
       method: "GET",
       headers: {
@@ -58,8 +57,6 @@ const RecipeHelper = {
   },
 
   getAllMyRecipes(owner) {
-    console.log(owner, "hi");
-    console.log("I'm supposed to get every recipe");
     return fetch(`${config.API_ENDPOINT}/recipes/user/${owner}`, {
       method: "GET",
       headers: {
@@ -70,7 +67,6 @@ const RecipeHelper = {
     );
   },
   updateRecipe(updatedData, id) {
-    console.log(updatedData);
     return fetch(`${config.API_ENDPOINT}/recipes/edit/${id}`, {
       method: "PATCH",
       headers: {

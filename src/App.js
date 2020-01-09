@@ -79,7 +79,6 @@ class App extends React.Component {
           isLoggedIn: true
         }))
     );
-    console.log("has logged in");
   };
 
   onLogout = () => {

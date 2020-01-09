@@ -1,4 +1,8 @@
 @media screen and (min-width: 100px) {
+  .RecentResults {
+    margin-top: 90%;
+  }
+
   .Result-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -41,7 +45,7 @@
   }
 
   .ThingRecipeItem {
-    margin-top: 75%;
+    margin-top: 5%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -95,7 +99,7 @@
 
 @media screen and (min-width: 319px) {
   .ThingRecipeItem {
-    margin-top: 90%;
+    margin-top: 5%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -110,8 +114,11 @@
   }
 }
 @media screen and (min-width: 374px) {
-  .ThingRecipeItem {
+  .RecentResults {
     margin-top: 60%;
+  }
+  .ThingRecipeItem {
+    margin-top: 5%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -126,8 +133,11 @@
   }
 }
 @media screen and (min-width: 424px) {
+  .RecentResults {
+    margin-top: 60%;
+  }
   .ThingRecipeItem {
-    margin-top: 55%;
+    margin-top: 5%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -142,8 +152,12 @@
   }
 }
 @media screen and (min-width: 479px) {
+  .RecentResults {
+    margin-top: 50%;
+  }
+
   .ThingRecipeItem {
-    margin-top: 45%;
+    margin-top: 5%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -158,8 +172,11 @@
   }
 }
 @media screen and (min-width: 767px) {
-  .ThingRecipeItem {
+  .RecentResults {
     margin-top: 30%;
+  }
+  .ThingRecipeItem {
+    margin-top: 5%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -175,8 +192,11 @@
 }
 
 @media screen and (min-width: 1023px) {
-  .ThingRecipeItem {
+  .RecentResults {
     margin-top: 25%;
+  }
+  .ThingRecipeItem {
+    margin-top: 5%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -192,8 +212,11 @@
 }
 
 @media screen and (min-width: 1439px) {
+  .RecentResults {
+    margin-top: 18%;
+  }
   .ThingRecipeItem {
-    margin-top: 17%;
+    margin-top: 3%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -209,8 +232,11 @@
 }
 
 @media screen and (min-width: 1919px) {
+  .RecentResults {
+    margin-top: 12%;
+  }
   .ThingRecipeItem {
-    margin-top: 13%;
+    margin-top: 3%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;

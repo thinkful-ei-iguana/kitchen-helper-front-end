@@ -48,13 +48,13 @@ export default class CreateRecipe extends React.Component {
     const recipe_description = ev.target.recipe_description.value;
     const recipe_ingredients = ev.target.recipe_ingredients.value;
     const time_to_make = ev.target.time_to_make.value;
-    console.log(
-      "edit submit values",
-      title,
-      recipe_description,
-      recipe_ingredients,
-      time_to_make
-    );
+    // console.log(
+    //   "edit submit values",
+    //   title,
+    //   recipe_description,
+    //   recipe_ingredients,
+    //   time_to_make
+    // );
     this.setState({ error: null });
     Recipe.updateRecipe(
       {
