@@ -374,3 +374,23 @@
 .submitLogin:hover {
   background-color: black;
 }
+
+/* @media screen and (max-width: 320px) {
+  .submitLogin:hover {
+    background-color: purple;
+  }
+}
+@media screen and (max-width: 360px) {
+  .submitLogin:hover {
+    background-color: yellow;
+  }
+} */
+/* @media screen and (max-width: 375px) { */
+/* @media screen and (max-width: 411px) { */
+/* @media screen and (max-width: 414px) { */
+/* @media screen and (max-width: 480px) { */
+/* @media screen and (max-width: 600px) { */
+/* @media screen and (max-width: 768px) { */
+/* @media screen and (max-width: 900px) { */
+/* @media screen and (max-width: 1024px) { */
+/* @media screen and (max-width: 1200px) { */

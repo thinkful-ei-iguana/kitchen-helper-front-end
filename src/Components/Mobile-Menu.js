@@ -1,11 +1,18 @@
 import React from "react";
-import TokenService from "../Helpers/Token";
+import { Link } from "react-router-dom";
+import Context from "../Components/Context";
+import "../Styles/Buttons.css";
 
 export default class DesktopMenu extends React.Component {
+  static contextType = Context;
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText: ""
+    };
+  }
+
   render() {
-    const LightModeToggle = this.props.state.isLight
-      ? "far fa-moon fa-fw"
-      : "far fa-lightbulb fa-fw";
     return (
       <div
         className={`mobileMenu ${
@@ -18,7 +25,7 @@ export default class DesktopMenu extends React.Component {
           </button>
           <div id="Inner-Container">
             <div id="Account-Options">
-              {TokenService.hasAuthToken()
+              {this.currentUser.hasAuthToken()
                 ? this.props.renderLogoutLink()
                 : this.props.renderLoginLink()}
             </div>
@@ -35,14 +42,7 @@ export default class DesktopMenu extends React.Component {
               </label>
               <button type="submit">search</button>
             </form>
-            <div id="DarkMode">
-              <button
-                className="LightModeToggle"
-                onClick={this.props.LightMode}
-              >
-                <i className={LightModeToggle}></i>
-              </button>
-            </div>
+            <div id="DarkMode"></div>
           </div>
         </nav>
       </div>
