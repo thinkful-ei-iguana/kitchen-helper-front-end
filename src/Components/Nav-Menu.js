@@ -29,15 +29,6 @@ export default class NavMenu extends React.Component {
     return (
       <header className="Nav-Header">
         <Link to="/Landing"></Link>
-        {/* {isMobile() ? (
-          <MobileMenu
-            id="MobileMenu"
-            state={this.state}
-            mobileToggle={this.toggleMenu}
-            renderLoginLink={this.renderLoginLink}
-            renderLogoutLink={this.renderLogoutLink}
-          />
-        ) : ( */}
         <DesktopMenu
           state={this.state}
           routeProps={this.props}
@@ -45,7 +36,6 @@ export default class NavMenu extends React.Component {
           renderLoginLink={this.renderLoginLink}
           renderLogoutLink={this.renderLogoutLink}
         />
-        )}
       </header>
     );
   }

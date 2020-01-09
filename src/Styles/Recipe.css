@@ -95,7 +95,39 @@
 
 @media screen and (min-width: 319px) {
   .ThingRecipeItem {
+    margin-top: 90%;
+    background: var(--alt-bg);
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+    text-decoration: none;
+    box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    margin-right: 200px;
+    border: black solid 2px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+}
+@media screen and (min-width: 374px) {
+  .ThingRecipeItem {
     margin-top: 60%;
+    background: var(--alt-bg);
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+    text-decoration: none;
+    box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    margin-right: 200px;
+    border: black solid 2px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+}
+@media screen and (min-width: 424px) {
+  .ThingRecipeItem {
+    margin-top: 55%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -127,7 +159,7 @@
 }
 @media screen and (min-width: 767px) {
   .ThingRecipeItem {
-    margin-top: 25%;
+    margin-top: 30%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
@@ -144,7 +176,41 @@
 
 @media screen and (min-width: 1023px) {
   .ThingRecipeItem {
-    margin-top: 15%;
+    margin-top: 25%;
+    background: var(--alt-bg);
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+    text-decoration: none;
+    box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    margin-right: 200px;
+    border: black solid 2px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .ThingRecipeItem {
+    margin-top: 17%;
+    background: var(--alt-bg);
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+    text-decoration: none;
+    box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    margin-right: 200px;
+    border: black solid 2px;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+}
+
+@media screen and (min-width: 1919px) {
+  .ThingRecipeItem {
+    margin-top: 13%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
