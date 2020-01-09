@@ -13,8 +13,6 @@ import CreateRecipe from "../src/Components/Create-Recipe";
 import EditRecipe from "../src/Components/Edit-Recipe";
 import Profile from "../src/Components/Profile";
 import Darkmode from "darkmode-js";
-// eslint-disable-next-line no-unused-vars
-import DesktopMenu from "./Components/Mobile-Menu";
 import DetailedView from "../src/Components/Detailed-View";
 
 const options = {
