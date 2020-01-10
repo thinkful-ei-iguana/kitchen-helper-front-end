@@ -9,7 +9,7 @@ export default class SearchResults extends React.Component {
 
   componentDidMount() {
     fetch(
-      `http://localhost:8000/api/recipes/${
+      `https://shrouded-castle-51769.herokuapp.com/api/recipes/${
         this.props.location.pathname.split("/")[2]
       }`
     )
