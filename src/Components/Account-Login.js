@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AuthHelper from "../Helpers/Auth";
 import Context from "../Components/Context";
+import "../Styles/Login.css";
+import "../Styles/Home.css";
 
 export default class Login extends React.Component {
   static contextType = Context;

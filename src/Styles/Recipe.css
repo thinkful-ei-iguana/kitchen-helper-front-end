@@ -3,6 +3,10 @@
     margin-top: 90%;
   }
 
+  .flex-container {
+    margin-top: 5%;
+  }
+
   .Result-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
@@ -59,11 +63,19 @@
     transition: all 0.5s;
   }
 
+  .Results-item:nth-child(1) {
+    margin-top: 12%;
+  }
+
   .ThingRecipeItem:hover {
     cursor: pointer;
     opacity: 50%;
     transition: all 0.5s;
     background-color: rgb(42, 100, 30);
+  }
+
+  .Landing {
+    margin-top: 95%;
   }
 
   .ThingRecipeItem,
@@ -113,9 +125,17 @@
     transition: all 0.5s;
   }
 }
+
+.Landing {
+  margin-top: 95%;
+}
+
 @media screen and (min-width: 374px) {
   .RecentResults {
     margin-top: 60%;
+  }
+  .Landing {
+    margin-top: 65%;
   }
   .ThingRecipeItem {
     margin-top: 5%;
@@ -136,6 +156,9 @@
   .RecentResults {
     margin-top: 60%;
   }
+  .Landing {
+    margin-top: 55%;
+  }
   .ThingRecipeItem {
     margin-top: 5%;
     background: var(--alt-bg);
@@ -155,7 +178,9 @@
   .RecentResults {
     margin-top: 50%;
   }
-
+  .Landing {
+    margin-top: 50%;
+  }
   .ThingRecipeItem {
     margin-top: 5%;
     background: var(--alt-bg);
@@ -174,6 +199,9 @@
 @media screen and (min-width: 767px) {
   .RecentResults {
     margin-top: 30%;
+  }
+  .Landing {
+    margin-top: 33%;
   }
   .ThingRecipeItem {
     margin-top: 5%;
@@ -195,6 +223,9 @@
   .RecentResults {
     margin-top: 25%;
   }
+  .Landing {
+    margin-top: 23%;
+  }
   .ThingRecipeItem {
     margin-top: 5%;
     background: var(--alt-bg);
@@ -215,11 +246,15 @@
   .RecentResults {
     margin-top: 18%;
   }
+  .Landing {
+    margin-top: 18%;
+  }
   .ThingRecipeItem {
     margin-top: 3%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     font-size: smaller;
     text-decoration: none;
     box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
@@ -235,11 +270,17 @@
   .RecentResults {
     margin-top: 12%;
   }
+
+  .Landing {
+    margin-top: 13%;
+  }
+
   .ThingRecipeItem {
     margin-top: 3%;
     background: var(--alt-bg);
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     font-size: smaller;
     text-decoration: none;
     box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
@@ -250,3 +291,9 @@
     transition: all 0.5s;
   }
 }
+/* 
+@media screen and (min-width: 1px) {
+  .flex-container {
+    margin-top: 5%;
+  }
+} */

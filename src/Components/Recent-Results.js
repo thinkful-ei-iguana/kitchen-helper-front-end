@@ -1,6 +1,7 @@
 import React from "react";
 import config from "../config";
 import Recipe from "./Recipe";
+import "../Styles/Recipe.css";
 
 export default class RecentResults extends React.Component {
   constructor(props) {
