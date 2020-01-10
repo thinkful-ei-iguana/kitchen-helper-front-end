@@ -66,9 +66,12 @@ export default class Profile extends React.Component {
 
   renderNoRecipes = () => {
     return (
-      <h3 className="noRecipe">
-        {this.context.currentUser.first_name} has no recipes currently
-      </h3>
+      <div className="no-recipe-div">
+        <h3 className="noRecipe">
+          {this.context.currentUser.first_name} has no recipes currently
+        </h3>
+        <link to="/"></link>
+      </div>
     );
   };
 
