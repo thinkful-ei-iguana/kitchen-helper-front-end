@@ -42,19 +42,6 @@ export default class Login extends React.Component {
       });
   };
 
-  // userNameChanged = e => {
-  //   console.log("The user name has changed");
-  // };
-  // passwordHasChanged = e => {
-  //   console.log("The password has changed");
-  // };
-  // submitButtonHasBeenClicked = e => {
-  //   console.log("The submit button has been clicked");
-  // };
-  // submitButtonHasBeenHovered = e => {
-  //   console.log("The submit button has been hovered");
-  // };
-
   render() {
     return (
       <div className="Login">
@@ -63,7 +50,6 @@ export default class Login extends React.Component {
           className="Login-Form"
           onSubmit={this.loginSubmit}
           onMouseOver={this.submitButtonHasBeenHovered}
-          onClick={console.log("Submit has been clicked")}
         >
           <label className="field a-field a-field_a2">
             <input

@@ -2,7 +2,9 @@
   .submitCreate:hover {
     background-color: black;
   }
-
+  .submitCreateRecipe:hover {
+    background-color: black;
+  }
   .cancel-view:hover {
     background-color: black;
   }
