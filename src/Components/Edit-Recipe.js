@@ -80,7 +80,7 @@ export default class CreateRecipe extends React.Component {
     return (
       <div className="Creation">
         <header className="Creation-Header"></header>
-        <form className="Creation-Form" onSubmit={this.editSubmit}>
+        <form className="Creation-Form" to="/" onSubmit={this.editSubmit}>
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"

@@ -73,14 +73,20 @@ export default class DetailedView extends React.Component {
             style={{ backgroundImage: `url(${this.state.recipe.image})` }}
           />
         </div>
+        <p>Title:</p>
         <h2 className="recipe-title">{this.state.recipe.title}</h2>
+        <p>Recipe Description: </p>
         <h3 className="recipeDescription">
           {this.state.recipe.recipe_description}
         </h3>
-        <h4 className="recipeIngredients">
+        <p>Recipe Ingredients:</p>
+        <h3 className="recipeIngredients">
           {this.state.recipe.recipe_ingredients}
-        </h4>
-        <h5 className="recipeOwner">{this.state.recipe.owner}</h5>
+        </h3>
+        <p>Time to make the recipe:</p>
+        <h3>{this.state.recipe.time_to_make}</h3>
+        <p>Owner:</p>
+        <h3 className="recipeOwner">{this.state.recipe.owner}</h3>
         <span className="recipe-date_created">
           Date Created: {this.state.recipe.date_created}
         </span>
