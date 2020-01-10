@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Context from "../Components/Context";
+import Context from "./Context";
 import "../Styles/Buttons.css";
 
 export default class DesktopMenu extends React.Component {
@@ -20,6 +20,7 @@ export default class DesktopMenu extends React.Component {
               User: {this.context.currentUser.user_name}
               <div className="user-name-div">
                 <Link
+                  type="submit"
                   className="user-name"
                   to={`/user/${this.context.currentUser.user_name}`}
                 >
@@ -49,7 +50,7 @@ export default class DesktopMenu extends React.Component {
         ) : (
           <div className="Header__logged-out">
             <Link className="login" to="/login">
-              Log in Test
+              Login
             </Link>
             <p></p>
             <Link className="create-account" to="/create-account">

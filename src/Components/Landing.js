@@ -1,7 +1,7 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
-import Context from "../Components/Context";
+import Context from "./Context";
 import RecentResults from "./Recent-Results";
 
 export default class Landing extends React.Component {

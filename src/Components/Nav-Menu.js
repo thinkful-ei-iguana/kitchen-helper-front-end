@@ -2,14 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import MobileMenu from "../Components/Mobile-Menu";
 import DesktopMenu from "../Components/Desktop-Menu";
-import Context from "../Components/Context";
-
-// function isMobile() {
-//   if (window.innerWidth < 1200) {
-//     return true;
-//   }
-//   return false;
-// }
+import Context from "./Context";
 
 export default class NavMenu extends React.Component {
   static contextType = Context;
@@ -32,7 +25,6 @@ export default class NavMenu extends React.Component {
         <DesktopMenu
           state={this.state}
           routeProps={this.props}
-          LightMode={this.toggleLightMode}
           renderLoginLink={this.renderLoginLink}
           renderLogoutLink={this.renderLogoutLink}
         />

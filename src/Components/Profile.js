@@ -2,7 +2,7 @@ import React from "react";
 import AuthHelper from "../Helpers/Auth";
 import { Link } from "react-router-dom";
 import Recipe from "../Components/Recipe";
-import Context from "../Components/Context";
+import Context from "./Context";
 
 export default class Profile extends React.Component {
   constructor(props) {

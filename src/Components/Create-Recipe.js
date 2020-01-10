@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Recipe from "../Helpers/Recipe";
-import Context from "../Components/Context";
+import Context from "./Context";
 import "../Styles/Buttons.css";
 
 export default class CreateRecipe extends React.Component {
@@ -121,6 +121,8 @@ export default class CreateRecipe extends React.Component {
             </span>
           </label>
           <div className="btn-row">
+            {/* <Link to="/">
+            </Link> */}
             <button className="submitCreateRecipe">Create recipe</button>
             <Link to="">
               <button className="cancelEditRecipe">Cancel</button>

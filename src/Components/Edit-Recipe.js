@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Recipe from "../Helpers/Recipe";
-import Context from "../Components/Context";
+import Context from "./Context";
 import RecipeHelper from "../Helpers/Recipe";
 import "../Styles/Buttons.css";
 export default class CreateRecipe extends React.Component {
@@ -125,7 +125,9 @@ export default class CreateRecipe extends React.Component {
             <span className="a-field__label"></span>
           </label>
           <div className="btn-row">
-            <button className="submitRecipeEdit">Submit</button>
+            <Link to="/">
+              <button className="submitRecipeEdit">Submit</button>
+            </Link>
             <Link to="/">
               <button className="cancelEditRecipe">Cancel</button>
             </Link>

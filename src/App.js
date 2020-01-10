@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NavMenu from "../src/Components/Nav-Menu";
 import Landing from "../src/Components/Landing";
 import AccountCreation from "../src/Components/Account-Creation";
@@ -7,7 +7,7 @@ import AccountLogin from "../src/Components/Account-Login";
 import SearchResults from "../src/Components/Search-Results";
 import Home from "../src/Components/Home";
 import AuthHelper from "../src/Helpers/Auth";
-import Context from "../src/Components/Context";
+import Context from "./Components/Context";
 import config from "./config";
 import CreateRecipe from "../src/Components/Create-Recipe";
 import EditRecipe from "../src/Components/Edit-Recipe";
@@ -39,6 +39,7 @@ class App extends React.Component {
       recipes: []
     };
   }
+  // this.forceUpdate();
 
   componentDidMount() {
     if (this.hasAuthToken()) {
@@ -56,6 +57,9 @@ class App extends React.Component {
       .then(data => {
         this.setState({ recipes: data });
       });
+    if (this.componentDidMount) {
+      console.log("component mounted");
+    }
   }
 
   saveAuthToken = token => {
@@ -74,7 +78,7 @@ class App extends React.Component {
   onLogin = () => {
     AuthHelper.getCurrentUser(this.getAuthToken()).then(
       data =>
-        (this.setState = () => ({
+        (this.setState = prevState => ({
           currentUser: data,
           isLoggedIn: true
         }))
@@ -106,7 +110,7 @@ class App extends React.Component {
       >
         {" "}
         <div className="App">
-          <Router>
+          <Switch>
             <Route
               exact
               path="/"
@@ -180,7 +184,7 @@ class App extends React.Component {
                 return <EditRecipe {...routeProps} />;
               }}
             />
-          </Router>
+          </Switch>
         </div>
       </Context.Provider>
     );

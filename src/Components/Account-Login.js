@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AuthHelper from "../Helpers/Auth";
-import Context from "../Components/Context";
+import Context from "./Context";
 import "../Styles/Login.css";
 import "../Styles/Home.css";
 
@@ -77,12 +77,14 @@ export default class Login extends React.Component {
             </span>
           </label>
           <div className="btn-row">
-            <input
+            <button
               type="submit"
               className="submitLogin"
-              value="login"
+              value="Login"
               onClick={this.submitButtonHasBeenClicked}
-            />
+            >
+              Login
+            </button>
             <Link to="/Create-Account">
               <button className="newAccount">Create an account</button>
             </Link>
