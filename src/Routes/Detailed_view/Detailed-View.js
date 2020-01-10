@@ -1,8 +1,13 @@
 import React from "react";
-import RecipeHelper from "../Helpers/Recipe";
+import RecipeHelper from "../../Helpers/Recipe";
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream:src/Components/Detailed-View.js
 import Context from "../Components/Context";
 import "../Styles/Buttons.css";
+=======
+import Context from "../../Components/Context/Context";
+// import "./src/Styles/Buttons.css";
+>>>>>>> Stashed changes:src/Routes/Detailed_view/Detailed-View.js
 
 export default class DetailedView extends React.Component {
   constructor(props) {

@@ -1,8 +1,13 @@
 import React from "react";
-import AuthHelper from "../Helpers/Auth";
+import AuthHelper from "../../Helpers/Auth";
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream:src/Components/Profile.js
 import Recipe from "../Components/Recipe";
 import Context from "../Components/Context";
+=======
+import Recipe from "../../Components/Recipe/Recipe";
+import Context from "../../Components/Context/Context";
+>>>>>>> Stashed changes:src/Routes/Profile/Profile.js
 
 export default class Profile extends React.Component {
   constructor(props) {

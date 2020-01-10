@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream:src/Components/Desktop-Menu.js
 import Context from "../Components/Context";
 import "../Styles/Buttons.css";
+=======
+import Context from "../Context/Context";
+// import ".../Styles/Buttons.css";
+>>>>>>> Stashed changes:src/Components/Menu/Desktop-Menu.js
 
 export default class DesktopMenu extends React.Component {
   static contextType = Context;

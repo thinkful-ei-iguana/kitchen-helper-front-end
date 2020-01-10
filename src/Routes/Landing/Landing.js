@@ -1,8 +1,13 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream:src/Components/Landing.js
 import Context from "../Components/Context";
 import RecentResults from "./Recent-Results";
+=======
+import Context from "../../Components/Context/Context";
+import RecentResults from "../Recent-Results/Recent-Results";
+>>>>>>> Stashed changes:src/Routes/Landing/Landing.js
 
 export default class Landing extends React.Component {
   static contextType = Context;

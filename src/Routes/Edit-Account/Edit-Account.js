@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Auth from "../Helpers/Auth";
+import Auth from "../../Helpers/Auth";
 import Context from "../Component/Context";
 
 export default class Login extends React.Component {

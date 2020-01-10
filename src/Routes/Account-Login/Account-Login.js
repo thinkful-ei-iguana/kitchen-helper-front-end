@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream:src/Components/Account-Login.js
 import AuthHelper from "../Helpers/Auth";
 import Context from "../Components/Context";
 import "../Styles/Login.css";
 import "../Styles/Home.css";
+=======
+import AuthHelper from "../../Helpers/Auth";
+import Context from "../../Components/Context/Context";
+// import "./src/Styles/Login.css";
+// import "./src/Styles/Home.css";
+>>>>>>> Stashed changes:src/Routes/Account-Login/Account-Login.js
 
 export default class Login extends React.Component {
   static contextType = Context;

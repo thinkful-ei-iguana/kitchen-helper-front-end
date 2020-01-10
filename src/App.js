@@ -8,12 +8,21 @@ import SearchResults from "../src/Components/Search-Results";
 import Home from "../src/Components/Home";
 import AuthHelper from "../src/Helpers/Auth";
 import Context from "../src/Components/Context";
+import { Route, Switch } from "react-router-dom";
+import NavMenu from "./Components/Nav-Menu/Nav-Menu";
+import Landing from "./Routes/Landing/Landing";
+import AccountCreation from "./Routes/Account-Creation/Account-Creation";
+import AccountLogin from "./Routes/Account-Login/Account-Login";
+import SearchResults from "./Components/Search-Results/Search-Results";
+import Home from "./Routes/Home/Home";
+import AuthHelper from "../src/Helpers/Auth";
+import Context from "./Components/Context/Context";
 import config from "./config";
-import CreateRecipe from "../src/Components/Create-Recipe";
-import EditRecipe from "../src/Components/Edit-Recipe";
-import Profile from "../src/Components/Profile";
+import CreateRecipe from "./Routes/Create-Recipe/Create-Recipe";
+import EditRecipe from "./Routes/Edit-Recipe/Edit-Recipe";
+import Profile from "./Routes/Profile/Profile";
 import Darkmode from "darkmode-js";
-import DetailedView from "../src/Components/Detailed-View";
+import DetailedView from "./Routes/Detailed_view/Detailed-View";
 
 const options = {
   bottom: "64px", // default: '32px'

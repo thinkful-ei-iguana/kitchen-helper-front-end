@@ -1,8 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+<<<<<<< Updated upstream:src/Components/Create-Recipe.js
 import Recipe from "../Helpers/Recipe";
 import Context from "../Components/Context";
 import "../Styles/Buttons.css";
+=======
+import Recipe from "../../Helpers/Recipe";
+import Context from "../../Components/Context/Context";
+// import "./src/Styles/Buttons.css";
+>>>>>>> Stashed changes:src/Routes/Create-Recipe/Create-Recipe.js
 
 export default class CreateRecipe extends React.Component {
   static contextType = Context;

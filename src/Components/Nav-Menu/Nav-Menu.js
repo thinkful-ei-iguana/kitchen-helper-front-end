@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import MobileMenu from "../Components/Mobile-Menu";
+<<<<<<< Updated upstream:src/Components/Nav-Menu.js
 import DesktopMenu from "../Components/Desktop-Menu";
 import Context from "../Components/Context";
 
@@ -10,6 +11,10 @@ import Context from "../Components/Context";
 //   }
 //   return false;
 // }
+=======
+import DesktopMenu from "../Menu/Desktop-Menu";
+import Context from "../Context/Context";
+>>>>>>> Stashed changes:src/Components/Nav-Menu/Nav-Menu.js
 
 export default class NavMenu extends React.Component {
   static contextType = Context;
