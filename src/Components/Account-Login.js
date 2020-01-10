@@ -34,8 +34,9 @@ export default class Login extends React.Component {
         user_name.value = "";
         password.value = "";
         this.context.saveAuthToken(res.authToken);
-        this.context.onLogin();
-        this.props.history.push("/");
+        this.context.onLogin(() => {
+          this.props.history.push("/");
+        });
       })
       .catch(res => {
         this.setState({ error: res.error });
@@ -46,18 +47,13 @@ export default class Login extends React.Component {
     return (
       <div className="Login">
         <header className="Login-Header"></header>
-        <form
-          className="Login-Form"
-          onSubmit={this.loginSubmit}
-          onMouseOver={this.submitButtonHasBeenHovered}
-        >
+        <form className="Login-Form" onSubmit={this.loginSubmit}>
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"
               required
               name="user_name"
               placeholder="Username"
-              onChange={this.userNameChanged}
             />
             <span className="a-field__label-wrap">
               <span className="a-field__label">Username</span>
@@ -70,19 +66,13 @@ export default class Login extends React.Component {
               name="password"
               type="password"
               placeholder="Password"
-              onChange={this.passwordHasChanged}
             />
             <span className="a-field__label-wrap">
               <span className="a-field__label">Password</span>
             </span>
           </label>
           <div className="btn-row">
-            <button
-              type="submit"
-              className="submitLogin"
-              value="Login"
-              onClick={this.submitButtonHasBeenClicked}
-            >
+            <button type="submit" className="submitLogin" value="Login">
               Login
             </button>
             <Link to="/Create-Account">

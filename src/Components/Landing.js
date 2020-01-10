@@ -14,9 +14,6 @@ export default class Landing extends React.Component {
     if (this.context.recipes.length === 0) {
       return <p>Loading</p>;
     }
-    document.addEventListener("click", function(event) {
-      event.preventDefault(event);
-    });
 
     return (
       <div className="Landing">

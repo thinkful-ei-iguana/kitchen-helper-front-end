@@ -57,9 +57,6 @@ class App extends React.Component {
       .then(data => {
         this.setState({ recipes: data });
       });
-    if (this.componentDidMount) {
-      console.log("component mounted");
-    }
   }
 
   saveAuthToken = token => {
@@ -75,13 +72,15 @@ class App extends React.Component {
     return window.btoa(`${userName}:${password}`);
   };
 
-  onLogin = () => {
-    AuthHelper.getCurrentUser(this.getAuthToken()).then(
-      data =>
-        (this.setState = prevState => ({
+  onLogin = navigate => {
+    AuthHelper.getCurrentUser(this.getAuthToken()).then(data =>
+      this.setState(
+        {
           currentUser: data,
           isLoggedIn: true
-        }))
+        },
+        navigate
+      )
     );
   };
 
