@@ -3,6 +3,7 @@ import AuthHelper from "../Helpers/Auth";
 import { Link } from "react-router-dom";
 import Recipe from "../Components/Recipe";
 import Context from "./Context";
+import "../Styles/Buttons.css";
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -66,12 +67,17 @@ export default class Profile extends React.Component {
 
   renderNoRecipes = () => {
     return (
-      <div className="no-recipe-div">
-        <h3 className="noRecipe">
-          {this.context.currentUser.first_name} has no recipes currently
-        </h3>
-        <link to="/"></link>
-      </div>
+      <>
+        <div className="no-recipe-div">
+          <h3 className="noRecipe">
+            {this.context.currentUser.first_name} has no recipes currently
+          </h3>
+          <link to="/"></link>
+          <Link type="submit" className="noRecipeGoHome" to={"/"}>
+            Home
+          </Link>
+        </div>
+      </>
     );
   };
 
@@ -115,6 +121,11 @@ export default class Profile extends React.Component {
             : this.renderNoRecipes()
           // this.checkRecipeOwner())
           }
+        </div>
+        <div>
+          <Link type="submit" className="noRecipeGoHome" to="/">
+            Home
+          </Link>
         </div>
       </>
     );

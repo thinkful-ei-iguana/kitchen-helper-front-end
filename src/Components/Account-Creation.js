@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../Helpers/Auth";
+import "../Styles/Buttons.css";
 
 export default class Login extends React.Component {
   static defaultProps = {
@@ -94,7 +95,9 @@ export default class Login extends React.Component {
           <div className="btn-row">
             <button className="submitCreate">Create</button>
             <Link to="/Login">
-              <button className="newAccount">Already have an account?</button>
+              <button className="accountChecker">
+                Already have an account?
+              </button>
             </Link>
           </div>
         </form>

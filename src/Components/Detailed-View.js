@@ -3,6 +3,7 @@ import RecipeHelper from "../Helpers/Recipe";
 import { Link } from "react-router-dom";
 import Context from "./Context";
 import "../Styles/Buttons.css";
+import "../Styles/Recipe.css";
 
 export default class DetailedView extends React.Component {
   constructor(props) {
@@ -66,36 +67,40 @@ export default class DetailedView extends React.Component {
 
   render() {
     return (
-      <div className="view">
-        <div className="image-container">
-          <div
-            className="image"
-            style={{ backgroundImage: `url(${this.state.recipe.image})` }}
-          />
+      <>
+        <div className="view">
+          <div className="image-container">
+            <div
+              className="image"
+              style={{ backgroundImage: `url(${this.state.recipe.image})` }}
+            />
+          </div>
+          <p className="recipe-title">Title:</p>
+          <h2 className="recipe-title">{this.state.recipe.title}</h2>
+          <p className="recipeDescription">Recipe Description: </p>
+          <h3 className="recipeDescription">
+            {this.state.recipe.recipe_description}
+          </h3>
+          <p className="recipeIngredients">Recipe Ingredients:</p>
+          <h3 className="recipeIngredients">
+            {this.state.recipe.recipe_ingredients}
+          </h3>
+          <p className="timeToMakeRecipe">Time to make the recipe:</p>
+          <h3 className="timeToMakeRecipe">{this.state.recipe.time_to_make}</h3>
+          <p className="recipeOwner">Owner:</p>
+          <h3 className="recipeOwner">{this.state.recipe.owner}</h3>
+          <div className="recipe-date_created">
+            <span className="recipe-date_created">
+              Date Created: {this.state.recipe.date_created}
+            </span>
+          </div>
+          <div>{this.deleteOption()}</div>
+          <div>{this.ownerOption()}</div>
+          <Link to="/">
+            <button className="cancel-view">Cancel</button>
+          </Link>
         </div>
-        <p>Title:</p>
-        <h2 className="recipe-title">{this.state.recipe.title}</h2>
-        <p>Recipe Description: </p>
-        <h3 className="recipeDescription">
-          {this.state.recipe.recipe_description}
-        </h3>
-        <p>Recipe Ingredients:</p>
-        <h3 className="recipeIngredients">
-          {this.state.recipe.recipe_ingredients}
-        </h3>
-        <p>Time to make the recipe:</p>
-        <h3>{this.state.recipe.time_to_make}</h3>
-        <p>Owner:</p>
-        <h3 className="recipeOwner">{this.state.recipe.owner}</h3>
-        <span className="recipe-date_created">
-          Date Created: {this.state.recipe.date_created}
-        </span>
-        <div>{this.deleteOption()}</div>
-        <div>{this.ownerOption()}</div>
-        <Link to="/">
-          <button className="cancel-view">Cancel</button>
-        </Link>
-      </div>
+      </>
     );
   }
 }

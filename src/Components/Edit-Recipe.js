@@ -120,7 +120,7 @@ export default class CreateRecipe extends React.Component {
               required
               type="text"
               name="time_to_make"
-              placeholder="Time to make the recipe?"
+              placeholder="Time to make it?"
             />
             <span className="a-field__label"></span>
           </label>
