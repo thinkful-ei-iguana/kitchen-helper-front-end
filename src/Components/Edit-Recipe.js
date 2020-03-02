@@ -9,7 +9,7 @@ export default class CreateRecipe extends React.Component {
   static defaultProps = {
     location: {},
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 

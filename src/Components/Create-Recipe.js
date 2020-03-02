@@ -10,7 +10,7 @@ export default class CreateRecipe extends React.Component {
     currentUser: {},
     location: {},
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -103,18 +103,6 @@ export default class CreateRecipe extends React.Component {
               type="textfield"
               name="time_to_make"
               placeholder="Time to make it?"
-            />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label"></span>
-            </span>
-          </label>
-          <label className="field a-field a-field_a2">
-            <input
-              className="field__input a-field__input"
-              required
-              type="text"
-              name="image"
-              placeholder="Recipe image url"
             />
             <span className="a-field__label-wrap">
               <span className="a-field__label"></span>

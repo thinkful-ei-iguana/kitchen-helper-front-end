@@ -1,68 +1,108 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Kitchen Helper:
 
-## Available Scripts
+    Kitchen Helper is a best friend in the kitchen.
+    This app combines the ability to track the items in your pantry,
+    the opportunity to plan your meals for a given time period and puts a
+    large database of recipes at your fingertips. This app also allows
+    you to create and add your own recipes.
+    
 
-In the project directory, you can run:
+## Contributors:
 
-### `npm start`
+- Maggie McClellan
+- Calvin Rosehart
+- Anugrah Lambogo
+- Christina Chapman
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Motivation:
 
-### `npm test`
+    The motivation for this app was the idea that it would
+    help those that wish to be more organized and pro-active
+    in the kitchen.  It takes the guess work out of wondering
+    what you have in your kitchen to create meals.  So, if
+    you are someone who forgets easily, a busy parent that
+    feels frazzled about what to cook, or an older couple
+    looking to try something new, this app has something for everyone.
+    
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Visit Kitchen Helper:
 
-### `npm run build`
+  * [Server Side Repo](https://github.com/thinkful-ei-iguana/kitchen-helper)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * [Live App](Filler text)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Screenshots:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ![Landing Logo](src/Assets/LandingLogo.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ![Home Page](src/Assets/homePage.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ![Pantry Landing Page](src/Assets/pantryLanding.gif)   
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ![Recipe Landing Page](src/Assets/recipeLanding.gif)
 
-## Learn More
+   ![Recipe Detail Page](src/Assets/recipeDetail.gif)
+   
+   ![Meal Plan Add](src/Assets/planAdd.gif)
+   
+   ![Dark Mode Banner](src/Assets/DarkMode-Banner.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies:
 
-### Code Splitting
+**Front End Tech:** HTML, CSS, JavaScript, React, Modal, Widgets(Dark Mode)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Back End Tech:** NodeJs, ExpressJs, PostgreSQL
 
-### Analyzing the Bundle Size
+**Testing Tech:** Jest, Supertest, Snapshot, Enzyme, Lodash, Mocha, Chai
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Core Features:
 
-### Making a Progressive Web App
+- Ability to create/login with user accounts
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- Ability to add and filter ingredients in the pantry
 
-### Advanced Configuration
+- Ability to track the stock level of your ingredients
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- Ability to search and display recipes, create new recipes
 
-### Deployment
+- Ability to edit and delete recipes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Ability to create meal plans using the recipes and the pantry
 
-### `npm run build` fails to minify
+- Ability to select a recipe from ones owned by user and set date for meal plan
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Ability to display prep time and ingredients needed from the chosen recipe
+
+## Upcoming Features:
+
+- Ability to create a favorite list of recipes
+
+- Ability to have a recent search result list
+
+- Ability to create a shopping list from the meal plan feature
+
+- Ability to use the camera and a barcode scanner to add items to your pantry and then in turn to the shopping list
+
+## Code Example:
+
+    Code snippet For Modal Pop-up
+
+        StyledModal = Modal.styled`
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            opacity: ${props => this.props.opacity};
+            transition: opacity ease 500ms;
+        `;
+
+        toggleModal = (e) => {
+            this.setState({
+            isOpen: !this.state.isOpen
+            })
+        }

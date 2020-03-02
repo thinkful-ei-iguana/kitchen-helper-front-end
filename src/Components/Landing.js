@@ -23,7 +23,6 @@ export default class Landing extends React.Component {
           <RecentResults />
         </section>
         <section id="Landing-Buttons">
-          <hr id="Connect-Divider" />
           <div id="buttons">
             <a href="https://github.com" target="blank_">
               <i className="fab fa-github"></i>

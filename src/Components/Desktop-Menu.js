@@ -43,23 +43,24 @@ export default class DesktopMenu extends React.Component {
                 >
                   Logout
                 </Link>
+                <br></br>
                 <p></p>
               </div>
             </div>
           </div>
         ) : (
-          <div className="Header__logged-out">
-            <Link className="login" to="/login">
-              Login
+            <div className="Header__logged-out">
+              <Link className="login" to="/login">
+                Login
             </Link>
-            <p></p>
-            <Link className="create-account" to="/create-account">
-              {" "}
-              Register
+              <p></p>
+              <Link className="create-account" to="/create-account">
+                {" "}
+                Register
             </Link>
-            <p></p>
-          </div>
-        )}
+              <p></p>
+            </div>
+          )}
       </div>
     );
   }

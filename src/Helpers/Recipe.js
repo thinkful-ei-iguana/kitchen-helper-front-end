@@ -24,7 +24,7 @@ const RecipeHelper = {
   },
 
   getRecipeOwnerData(id) {
-    return fetch(`${config.API_ENDPOINT}/recipe/${id}`, {
+    return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json"
