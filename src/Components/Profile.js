@@ -28,10 +28,6 @@ export default class Profile extends React.Component {
     return text;
   };
 
-  editAccount = () => {
-    console.log("not setup yet");
-  };
-
   deleteAccount = () => {
     AuthHelper.deleteAccount(this.context.currentUser.user_name)
       .then(this.context.onLogout)
@@ -119,7 +115,6 @@ export default class Profile extends React.Component {
           {recipesOwned.length > 0
             ? this.renderRecipe(recipesOwned)
             : this.renderNoRecipes()
-          // this.checkRecipeOwner())
           }
         </div>
         <div>

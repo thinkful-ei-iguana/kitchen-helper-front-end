@@ -16,17 +16,17 @@ import Darkmode from "darkmode-js";
 import DetailedView from "../src/Components/Detailed-View";
 
 const options = {
-  bottom: "64px", // default: '32px'
+  bottom: "64px",
   right: "32px",
   left: "unset",
-  time: "0.5s", // default: '0.3s'
-  mixColor: "#fff", // default: '#fff'
-  backgroundColor: "#fff", // default: '#fff'
-  buttonColorDark: "#100f2c", // default: '#100f2c'
-  buttonColorLight: "#fff", // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: "🌓", // default: ''
-  autoMatchOsTheme: true // default: true
+  time: "0.5s",
+  mixColor: "#fff",
+  backgroundColor: "#fff",
+  buttonColorDark: "#100f2c",
+  buttonColorLight: "#fff",
+  saveInCookies: false,
+  label: "🌓",
+  autoMatchOsTheme: true
 };
 
 class App extends React.Component {
@@ -39,7 +39,6 @@ class App extends React.Component {
       recipes: []
     };
   }
-  // this.forceUpdate();
 
   componentDidMount() {
     if (this.hasAuthToken()) {

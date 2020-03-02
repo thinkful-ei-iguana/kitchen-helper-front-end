@@ -13,7 +13,6 @@ const RecipeHelper = {
     );
   },
   recipeById(id) {
-    // console.log("getting recipe by id");
     return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "GET",
       headers: {
@@ -23,9 +22,6 @@ const RecipeHelper = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  // ${this.recipes.filter(
-  //   recipes => recipes.owner === this.recipes.owner
-  // )}
 
   getRecipeOwnerData(id) {
     return fetch(`${config.API_ENDPOINT}/recipe/${id}`, {
