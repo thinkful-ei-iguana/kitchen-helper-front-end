@@ -4,7 +4,6 @@ import NavMenu from "../src/Components/Nav-Menu";
 import Landing from "../src/Components/Landing";
 import AccountCreation from "../src/Components/Account-Creation";
 import AccountLogin from "../src/Components/Account-Login";
-import SearchResults from "../src/Components/Search-Results";
 import Home from "../src/Components/Home";
 import AuthHelper from "../src/Helpers/Auth";
 import Context from "./Components/Context";
@@ -154,13 +153,6 @@ class App extends React.Component {
               path="/user/:username"
               render={routeProps => {
                 return <Profile {...routeProps} />;
-              }}
-            />
-            <Route
-              exact
-              path="/search/:searchterm"
-              render={routeProps => {
-                return <SearchResults {...routeProps} />;
               }}
             />
             <Route
