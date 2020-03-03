@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Recipe from "../Helpers/Recipe";
 import Context from "./Context";
 import RecipeHelper from "../Helpers/Recipe";
 import "../Styles/Buttons.css";
-export default class CreateRecipe extends React.Component {
+export default class EditRecipe extends React.Component {
   static contextType = Context;
   static defaultProps = {
     location: {},
@@ -39,19 +38,20 @@ export default class CreateRecipe extends React.Component {
 
   handleEditSuccess = () => {
     const { history } = this.props;
-    history.push("/");
+    history.push(`/recipes/${this.state.recipe.id}`);
   };
 
   editSubmit = ev => {
     ev.preventDefault();
-    const title = ev.target.title.value;
-    const recipe_description = ev.target.recipe_description.value;
-    const recipe_ingredients = ev.target.recipe_ingredients.value;
-    const time_to_make = ev.target.time_to_make.value;
+    let title = ev.target.title.value;
+    let recipe_description = ev.target.recipe_description.value;
+    let recipe_ingredients = ev.target.recipe_ingredients.value;
+    let time_to_make = ev.target.time_to_make.value;
 
     this.setState({ error: null });
-    Recipe.updateRecipe(
+    RecipeHelper.updateRecipe(
       {
+        id: this.state.recipe.id,
         title,
         recipe_description,
         recipe_ingredients,
@@ -61,11 +61,14 @@ export default class CreateRecipe extends React.Component {
       this.state.recipe.id
     )
       .then(recipe => {
-        title.value = "";
-        recipe_description.value = "";
-        recipe_ingredients.value = "";
-        time_to_make.value = "";
-        this.handleEditSuccess();
+        if (!recipe.ok) { this.setState({ error: !recipe.ok }) }
+        else {
+          title.value = "";
+          recipe_description.value = "";
+          recipe_ingredients.value = "";
+          time_to_make.value = "";
+          this.handleEditSuccess();
+        }
       })
       .catch(res => {
         this.setState({ error: res.error });
