@@ -30,17 +30,6 @@ export default class EditRecipe extends React.Component {
       })
   }
 
-
-  // ownerCheck = () => {
-  //   console.log(this.context, "this is context")
-  //   console.log(this.state, "this is state")
-  //   if (this.context.currentUser.id !== this.state.recipe.owner) {
-  //     return this.nonOwner();
-  //   } else {
-  //     return this.owner();
-  //   }
-  // };
-
   handleEditSuccess = () => {
     const { history } = this.props;
     history.push(`/recipes/${this.state.recipe.id}`);
@@ -48,43 +37,38 @@ export default class EditRecipe extends React.Component {
 
   editSubmit = e => {
     e.preventDefault();
-    console.log("make it here")
-    let { title,
-      recipe_description,
-      recipe_ingredients,
-      time_to_make
-    } = e.target;
+    console.log(this.state, "this is current state")
+    let title = e.target.title.value;
+    let recipe_description = e.target.recipe_description.value;
+    let recipe_ingredients = e.target.recipe_ingredients.value;
+    let time_to_make = e.target.time_to_make.value;
+
 
     this.setState({ error: null });
     RecipeHelper.updateRecipe(
       {
+        id: this.state.recipe.id,
         title,
         recipe_description,
         recipe_ingredients,
         time_to_make,
-        date_created: new Date()
       },
       this.state.recipe.id
     )
       .then(recipe => {
         if (!recipe.ok) { this.setState({ error: !recipe.ok }) }
         else {
-          title.value = "";
-          recipe_description.value = "";
-          recipe_ingredients.value = "";
-          time_to_make.value = "";
           this.handleEditSuccess();
+          title = "";
+          recipe_description = "";
+          recipe_ingredients = "";
+          time_to_make = "";
         }
       })
       .catch(res => {
         this.setState({ error: res.error });
       });
   };
-
-  // nonOwner = () => {
-  //   console.log("error")
-  //   return <h2>Error: you're not the owner of this recipe</h2>;
-  // };
 
   render() {
     return (
@@ -135,7 +119,7 @@ export default class EditRecipe extends React.Component {
             <span className="a-field__label"></span>
           </label>
           <div className="btn-row">
-            <button type="submit" value="EditRecipe" className="submitRecipeEdit">Submit</button>
+            <button className="submitRecipeEdit">Submit</button>
             <Link to="/">
               <button className="cancelEditRecipe">Cancel</button>
             </Link>

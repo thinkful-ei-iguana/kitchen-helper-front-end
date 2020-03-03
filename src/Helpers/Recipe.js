@@ -62,14 +62,14 @@ const RecipeHelper = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  updateRecipe(updatedData, id) {
-    return fetch(`${config.API_ENDPOINT}/recipe/${id}`, {
+  updateRecipe(updatedRecipe, id) {
+    return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${config.TOKEN_KEY}`
       },
-      body: JSON.stringify(updatedData)
+      body: JSON.stringify(updatedRecipe)
     });
   }
 };
