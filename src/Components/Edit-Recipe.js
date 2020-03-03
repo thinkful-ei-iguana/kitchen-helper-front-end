@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Context from "./Context";
 import RecipeHelper from "../Helpers/Recipe";
 import "../Styles/Buttons.css";
+import AuthHelper from "../Helpers/Auth";
+import _ from "lodash"
 export default class EditRecipe extends React.Component {
   static contextType = Context;
   static defaultProps = {
@@ -15,20 +17,26 @@ export default class EditRecipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe: {}
+      recipe: {},
     };
   }
 
   componentDidMount() {
+    console.log("component mounted")
     if (!this.context.hasAuthToken()) {
       this.props.history.push("/Login");
     }
-    RecipeHelper.recipeById(this.props.match.params.recipeid).then(data => {
-      this.setState({ recipe: data });
-    });
+    RecipeHelper.recipeById(_.get(this, "props.match.params.recipeid")).then(
+      data => {
+        this.setState({ recipe: data });
+        console.log("component mounted twice")
+      })
   }
 
+
   ownerCheck = () => {
+    console.log(this.context, "this is context")
+    console.log(this.state, "this is state")
     if (this.context.currentUser.id !== this.state.recipe.owner) {
       return this.nonOwner();
     } else {
@@ -41,12 +49,14 @@ export default class EditRecipe extends React.Component {
     history.push(`/recipes/${this.state.recipe.id}`);
   };
 
-  editSubmit = ev => {
-    ev.preventDefault();
-    let title = ev.target.title.value;
-    let recipe_description = ev.target.recipe_description.value;
-    let recipe_ingredients = ev.target.recipe_ingredients.value;
-    let time_to_make = ev.target.time_to_make.value;
+  editSubmit = e => {
+    e.preventDefault();
+    console.log("make it here")
+    let { title,
+      recipe_description,
+      recipe_ingredients,
+      time_to_make
+    } = e.target;
 
     this.setState({ error: null });
     RecipeHelper.updateRecipe(
@@ -76,6 +86,7 @@ export default class EditRecipe extends React.Component {
   };
 
   nonOwner = () => {
+    console.log("error")
     return <h2>Error: you're not the owner of this recipe</h2>;
   };
 
@@ -83,7 +94,7 @@ export default class EditRecipe extends React.Component {
     return (
       <div className="Creation">
         <header className="Creation-Header"></header>
-        <form className="Creation-Form" to="/" onSubmit={this.editSubmit}>
+        <form className="Creation-Form" onSubmit={this.editSubmit}>
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"
@@ -131,7 +142,7 @@ export default class EditRecipe extends React.Component {
             <Link to="/">
               <button className="submitRecipeEdit">Submit</button>
             </Link>
-            <Link to="/">
+            <Link to="">
               <button className="cancelEditRecipe">Cancel</button>
             </Link>
           </div>
