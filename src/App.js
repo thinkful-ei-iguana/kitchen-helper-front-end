@@ -4,7 +4,6 @@ import NavMenu from "../src/Components/Nav-Menu";
 import Landing from "../src/Components/Landing";
 import AccountCreation from "../src/Components/Account-Creation";
 import AccountLogin from "../src/Components/Account-Login";
-import Home from "../src/Components/Home";
 import AuthHelper from "../src/Helpers/Auth";
 import Context from "./Components/Context";
 import config from "./config";
@@ -118,13 +117,6 @@ class App extends React.Component {
                     <Landing {...routeProps} />
                   </>
                 );
-              }}
-            />
-            <Route
-              exact
-              path="/Home"
-              render={routeProps => {
-                return <Home {...routeProps} />;
               }}
             />
             <Route
