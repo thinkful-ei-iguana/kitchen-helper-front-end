@@ -63,7 +63,7 @@ const RecipeHelper = {
     );
   },
   updateRecipe(updatedRecipe, id) {
-    return fetch(`${config.API_ENDPOINT}/recipes/${id}`, {
+    return fetch(`${config.API_ENDPOINT}/recipes/edit/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
