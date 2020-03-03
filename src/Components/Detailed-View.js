@@ -56,7 +56,7 @@ export default class DetailedView extends React.Component {
         <div className="ownerSelectors">
           <Link
             className="editRecipe"
-            to={`/Edit-Recipe/${this.state.recipe.id}`}
+            to={`/edit-recipe/${this.state.recipe.id}`}
           >
             Edit Recipe
           </Link>

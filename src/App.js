@@ -161,7 +161,7 @@ class App extends React.Component {
             />
             <Route
               exact
-              path="/Edit-Recipe/:recipeid"
+              path="/edit-recipe/:recipeid"
               render={routeProps => {
                 return <EditRecipe {...routeProps} />;
               }}

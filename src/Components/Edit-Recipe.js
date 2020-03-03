@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Context from "./Context";
 import RecipeHelper from "../Helpers/Recipe";
 import "../Styles/Buttons.css";
-import AuthHelper from "../Helpers/Auth";
 import _ from "lodash"
 export default class EditRecipe extends React.Component {
   static contextType = Context;
@@ -22,27 +21,25 @@ export default class EditRecipe extends React.Component {
   }
 
   componentDidMount() {
-    console.log("component mounted")
     if (!this.context.hasAuthToken()) {
       this.props.history.push("/Login");
     }
     RecipeHelper.recipeById(_.get(this, "props.match.params.recipeid")).then(
       data => {
         this.setState({ recipe: data });
-        console.log("component mounted twice")
       })
   }
 
 
-  ownerCheck = () => {
-    console.log(this.context, "this is context")
-    console.log(this.state, "this is state")
-    if (this.context.currentUser.id !== this.state.recipe.owner) {
-      return this.nonOwner();
-    } else {
-      return this.owner();
-    }
-  };
+  // ownerCheck = () => {
+  //   console.log(this.context, "this is context")
+  //   console.log(this.state, "this is state")
+  //   if (this.context.currentUser.id !== this.state.recipe.owner) {
+  //     return this.nonOwner();
+  //   } else {
+  //     return this.owner();
+  //   }
+  // };
 
   handleEditSuccess = () => {
     const { history } = this.props;
@@ -61,7 +58,6 @@ export default class EditRecipe extends React.Component {
     this.setState({ error: null });
     RecipeHelper.updateRecipe(
       {
-        id: this.state.recipe.id,
         title,
         recipe_description,
         recipe_ingredients,
@@ -85,14 +81,14 @@ export default class EditRecipe extends React.Component {
       });
   };
 
-  nonOwner = () => {
-    console.log("error")
-    return <h2>Error: you're not the owner of this recipe</h2>;
-  };
+  // nonOwner = () => {
+  //   console.log("error")
+  //   return <h2>Error: you're not the owner of this recipe</h2>;
+  // };
 
-  owner = () => {
+  render() {
     return (
-      <div className="Creation">
+      <div className="EditRecipe">
         <header className="Creation-Header"></header>
         <form className="Creation-Form" onSubmit={this.editSubmit}>
           <label className="field a-field a-field_a2">
@@ -139,10 +135,8 @@ export default class EditRecipe extends React.Component {
             <span className="a-field__label"></span>
           </label>
           <div className="btn-row">
+            <button type="submit" value="EditRecipe" className="submitRecipeEdit">Submit</button>
             <Link to="/">
-              <button className="submitRecipeEdit">Submit</button>
-            </Link>
-            <Link to="">
               <button className="cancelEditRecipe">Cancel</button>
             </Link>
           </div>
@@ -150,7 +144,4 @@ export default class EditRecipe extends React.Component {
       </div>
     );
   };
-  render() {
-    return <div className="Edit">{this.ownerCheck()}</div>;
-  }
 }
