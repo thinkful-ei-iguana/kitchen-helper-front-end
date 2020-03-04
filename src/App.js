@@ -133,13 +133,6 @@ class App extends React.Component {
                 return <AccountCreation {...routeProps} />;
               }}
             />
-            {/* <Route
-              exact
-              path="/Edit-Account"
-              render={routeProps => {
-                return <EditAccount {...routeProps} />;
-              }}
-            /> */}
             <Route
               exact
               path="/user/:username"
