@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="Creation"
+>
+  <header
+    className="Creation-Header"
+  />
+  <form
+    className="Creation-Form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="first_name"
+        placeholder="Name"
+        required={true}
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        >
+          Display name
+        </span>
+      </span>
+    </label>
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="user_name"
+        placeholder="Username"
+        required={true}
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        >
+          Username
+        </span>
+      </span>
+    </label>
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="user_email"
+        placeholder="Email"
+        required={true}
+        type="email"
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        >
+          Email
+        </span>
+      </span>
+    </label>
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="password"
+        placeholder="Password"
+        required={true}
+        type="password"
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        >
+          Password
+        </span>
+      </span>
+    </label>
+    <div
+      className="btn-row"
+    >
+      <button
+        className="submitCreate"
+      >
+        Create
+      </button>
+      <a
+        href="/Login"
+        onClick={[Function]}
+      >
+        <button
+          className="accountChecker"
+        >
+          Already have an account?
+        </button>
+      </a>
+    </div>
+  </form>
+</div>
+`;

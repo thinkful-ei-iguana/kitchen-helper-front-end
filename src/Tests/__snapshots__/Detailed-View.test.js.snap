@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="view"
+>
+  <div
+    className="image-container"
+  >
+    <div
+      className="image"
+      style={
+        Object {
+          "backgroundImage": "url(undefined)",
+        }
+      }
+    />
+  </div>
+  <p
+    className="recipe-title"
+  >
+    Title:
+  </p>
+  <h2
+    className="recipe-title"
+  />
+  <p
+    className="recipeDescription"
+  >
+    Recipe Description: 
+  </p>
+  <h3
+    className="recipeDescription"
+  />
+  <p
+    className="recipeIngredients"
+  >
+    Recipe Ingredients:
+  </p>
+  <h3
+    className="recipeIngredients"
+  />
+  <p
+    className="timeToMakeRecipe"
+  >
+    Time to make the recipe:
+  </p>
+  <h3
+    className="timeToMakeRecipe"
+  />
+  <p
+    className="recipeOwner"
+  >
+    Owner:
+  </p>
+  <h3
+    className="recipeOwner"
+  />
+  <div
+    className="recipe-date_created"
+  >
+    <span
+      className="recipe-date_created"
+    >
+      Date Created: 
+    </span>
+  </div>
+  <div>
+    <div
+      className="delete-recipe-button-div"
+    >
+      <button
+        className="delete-recipe-button"
+        onClick={[Function]}
+      >
+        Delete Recipe
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="ownerSelectors"
+    >
+      <a
+        className="editRecipe"
+        href="/edit-recipe/undefined"
+        onClick={[Function]}
+      >
+        Edit Recipe
+      </a>
+    </div>
+  </div>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    <button
+      className="cancel-view"
+    >
+      Cancel
+    </button>
+  </a>
+</div>
+`;

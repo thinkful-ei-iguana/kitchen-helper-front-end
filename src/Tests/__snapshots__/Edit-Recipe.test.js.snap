@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="EditRecipe"
+>
+  <header
+    className="Creation-Header"
+  />
+  <form
+    className="Creation-Form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="title"
+        placeholder="Title"
+        required={true}
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        />
+      </span>
+    </label>
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="recipe_description"
+        placeholder="Description"
+        required={true}
+        type="textfield"
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        />
+      </span>
+    </label>
+    <label>
+      <input
+        className="field__input a-field__input"
+        name="recipe_ingredients"
+        placeholder="Ingredients"
+        required={true}
+        type="text"
+      />
+      <span
+        className="a-field__label"
+      />
+    </label>
+    <label>
+      <input
+        className="field__input a-field__input"
+        name="time_to_make"
+        placeholder="Time to make it?"
+        required={true}
+        type="text"
+      />
+      <span
+        className="a-field__label"
+      />
+    </label>
+    <div
+      className="btn-row"
+    >
+      <button
+        className="submitRecipeEdit"
+      >
+        Submit
+      </button>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <button
+          className="cancelEditRecipe"
+        >
+          Cancel
+        </button>
+      </a>
+    </div>
+  </form>
+</div>
+`;

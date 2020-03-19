@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="desktopMenu"
+>
+  <div
+    className="Header__logged-out"
+  >
+    <a
+      className="login"
+      href="/login"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+    <p />
+    <a
+      className="create-account"
+      href="/create-account"
+      onClick={[Function]}
+    >
+       
+      Register
+    </a>
+    <p />
+  </div>
+</div>
+`;

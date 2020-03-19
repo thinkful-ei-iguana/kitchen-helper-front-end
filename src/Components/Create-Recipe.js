@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Recipe from "../Helpers/Recipe";
-import Context from "../Components/Context";
+import Context from "./Context";
 import "../Styles/Buttons.css";
 
 export default class CreateRecipe extends React.Component {
@@ -10,7 +10,7 @@ export default class CreateRecipe extends React.Component {
     currentUser: {},
     location: {},
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -102,25 +102,15 @@ export default class CreateRecipe extends React.Component {
               required
               type="textfield"
               name="time_to_make"
-              placeholder="Time to make the recipe"
-            />
-            <span className="a-field__label-wrap">
-              <span className="a-field__label"></span>
-            </span>
-          </label>
-          <label className="field a-field a-field_a2">
-            <input
-              className="field__input a-field__input"
-              required
-              type="text"
-              name="image"
-              placeholder="Recipe image url"
+              placeholder="Time to make it?"
             />
             <span className="a-field__label-wrap">
               <span className="a-field__label"></span>
             </span>
           </label>
           <div className="btn-row">
+            {/* <Link to="/">
+            </Link> */}
             <button className="submitCreateRecipe">Create recipe</button>
             <Link to="">
               <button className="cancelEditRecipe">Cancel</button>
@@ -131,3 +121,4 @@ export default class CreateRecipe extends React.Component {
     );
   }
 }
+

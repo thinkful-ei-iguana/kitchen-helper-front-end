@@ -1,7 +1,5 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
-import { Link } from "react-router-dom";
-import Context from "../Components/Context";
+import Context from "./Context";
 import RecentResults from "./Recent-Results";
 
 export default class Landing extends React.Component {
@@ -14,9 +12,6 @@ export default class Landing extends React.Component {
     if (this.context.recipes.length === 0) {
       return <p>Loading</p>;
     }
-    document.addEventListener("click", function(event) {
-      event.preventDefault(event);
-    });
 
     return (
       <div className="Landing">
@@ -27,7 +22,6 @@ export default class Landing extends React.Component {
           <RecentResults />
         </section>
         <section id="Landing-Buttons">
-          <hr id="Connect-Divider" />
           <div id="buttons">
             <a href="https://github.com" target="blank_">
               <i className="fab fa-github"></i>

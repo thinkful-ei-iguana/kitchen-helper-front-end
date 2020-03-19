@@ -1,22 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Recipe from "../Helpers/Recipe";
-import Context from "../Components/Context";
+import Context from "./Context";
 import RecipeHelper from "../Helpers/Recipe";
 import "../Styles/Buttons.css";
-export default class CreateRecipe extends React.Component {
+import _ from "lodash"
+export default class EditRecipe extends React.Component {
   static contextType = Context;
   static defaultProps = {
     location: {},
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      recipe: {}
+      recipe: {},
     };
   }
 
@@ -24,63 +24,62 @@ export default class CreateRecipe extends React.Component {
     if (!this.context.hasAuthToken()) {
       this.props.history.push("/Login");
     }
-    RecipeHelper.recipeById(this.props.match.params.recipeid).then(data => {
-      this.setState({ recipe: data });
-    });
+    RecipeHelper.recipeById(_.get(this, "props.match.params.recipeid")).then(
+      data => {
+        this.setState({ recipe: data });
+      })
   }
-
-  ownerCheck = () => {
-    if (this.context.currentUser.id !== this.state.recipe.owner) {
-      return this.nonOwner();
-    } else {
-      return this.owner();
-    }
-  };
 
   handleEditSuccess = () => {
     const { history } = this.props;
-    history.push("/");
+    history.push(`/recipes/${this.state.recipe.id}`);
   };
 
-  editSubmit = ev => {
-    ev.preventDefault();
-    const title = ev.target.title.value;
-    const recipe_description = ev.target.recipe_description.value;
-    const recipe_ingredients = ev.target.recipe_ingredients.value;
-    const time_to_make = ev.target.time_to_make.value;
+  // handleChange = e => {
+  //   e.preventDefault();
+  //   console.log(this.state, "this is state at handleChange", e.target)
+  //   this.setState({
+  //     [e.target.name]: e.target.name.value
+  //   });
+  // };
+
+  editSubmit = e => {
+    e.preventDefault();
+    console.log(this.state, "this is current state")
+    let { title, recipe_description, recipe_ingredients, time_to_make } = e.target;
+
 
     this.setState({ error: null });
-    Recipe.updateRecipe(
+    RecipeHelper.updateRecipe(
       {
-        title,
-        recipe_description,
-        recipe_ingredients,
-        time_to_make,
-        date_created: new Date()
+        title: title.value,
+        owner: this.context.currentUser.id,
+        recipe_description: recipe_description.value,
+        recipe_ingredients: recipe_ingredients.value,
+        time_to_make: time_to_make.value,
       },
       this.state.recipe.id
     )
       .then(recipe => {
-        title.value = "";
-        recipe_description.value = "";
-        recipe_ingredients.value = "";
-        time_to_make.value = "";
-        this.handleEditSuccess();
+        if (!recipe.ok) { this.setState({ error: !recipe.ok }) }
+        else {
+          title.value = "";
+          recipe_description.value = "";
+          recipe_ingredients.value = "";
+          time_to_make.value = "";
+          this.handleEditSuccess();
+        }
       })
       .catch(res => {
         this.setState({ error: res.error });
       });
   };
 
-  nonOwner = () => {
-    return <h2>Error: you're not the owner of this recipe</h2>;
-  };
-
-  owner = () => {
+  render() {
     return (
-      <div className="Creation">
+      <div className="EditRecipe">
         <header className="Creation-Header"></header>
-        <form className="Creation-Form" to="/" onSubmit={this.editSubmit}>
+        <form className="Creation-Form" onChange={this.handleChange} onSubmit={this.editSubmit}>
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"
@@ -120,7 +119,7 @@ export default class CreateRecipe extends React.Component {
               required
               type="text"
               name="time_to_make"
-              placeholder="Time to make the recipe?"
+              placeholder="Time to make it?"
             />
             <span className="a-field__label"></span>
           </label>
@@ -134,7 +133,4 @@ export default class CreateRecipe extends React.Component {
       </div>
     );
   };
-  render() {
-    return <div className="Edit">{this.ownerCheck()}</div>;
-  }
 }

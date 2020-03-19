@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="Login"
+>
+  <header
+    className="Login-Header"
+  />
+  <form
+    className="Login-Form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="user_name"
+        placeholder="Username"
+        required={true}
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        >
+          Username
+        </span>
+      </span>
+    </label>
+    <label
+      className="field a-field a-field_a2"
+    >
+      <input
+        className="field__input a-field__input"
+        name="password"
+        placeholder="Password"
+        required={true}
+        type="password"
+      />
+      <span
+        className="a-field__label-wrap"
+      >
+        <span
+          className="a-field__label"
+        >
+          Password
+        </span>
+      </span>
+    </label>
+    <div
+      className="btn-row"
+    >
+      <button
+        className="submitLogin"
+        type="submit"
+        value="Login"
+      >
+        Login
+      </button>
+      <a
+        href="/Create-Account"
+        onClick={[Function]}
+      >
+        <button
+          className="newAccount"
+        >
+          Create an account
+        </button>
+      </a>
+    </div>
+  </form>
+</div>
+`;

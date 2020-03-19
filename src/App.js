@@ -1,13 +1,11 @@
 import React from "react";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NavMenu from "../src/Components/Nav-Menu";
 import Landing from "../src/Components/Landing";
 import AccountCreation from "../src/Components/Account-Creation";
 import AccountLogin from "../src/Components/Account-Login";
-import SearchResults from "../src/Components/Search-Results";
-import Home from "../src/Components/Home";
 import AuthHelper from "../src/Helpers/Auth";
-import Context from "../src/Components/Context";
+import Context from "./Components/Context";
 import config from "./config";
 import CreateRecipe from "../src/Components/Create-Recipe";
 import EditRecipe from "../src/Components/Edit-Recipe";
@@ -16,17 +14,17 @@ import Darkmode from "darkmode-js";
 import DetailedView from "../src/Components/Detailed-View";
 
 const options = {
-  bottom: "64px", // default: '32px'
+  bottom: "64px",
   right: "32px",
   left: "unset",
-  time: "0.5s", // default: '0.3s'
-  mixColor: "#fff", // default: '#fff'
-  backgroundColor: "#fff", // default: '#fff'
-  buttonColorDark: "#100f2c", // default: '#100f2c'
-  buttonColorLight: "#fff", // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: "🌓", // default: ''
-  autoMatchOsTheme: true // default: true
+  time: "0.5s",
+  mixColor: "#fff",
+  backgroundColor: "#fff",
+  buttonColorDark: "#100f2c",
+  buttonColorLight: "#fff",
+  saveInCookies: false,
+  label: "🌓",
+  autoMatchOsTheme: true
 };
 
 class App extends React.Component {
@@ -71,13 +69,15 @@ class App extends React.Component {
     return window.btoa(`${userName}:${password}`);
   };
 
-  onLogin = () => {
-    AuthHelper.getCurrentUser(this.getAuthToken()).then(
-      data =>
-        (this.setState = () => ({
+  onLogin = navigate => {
+    AuthHelper.getCurrentUser(this.getAuthToken()).then(data =>
+      this.setState(
+        {
           currentUser: data,
           isLoggedIn: true
-        }))
+        },
+        navigate
+      )
     );
   };
 
@@ -106,7 +106,7 @@ class App extends React.Component {
       >
         {" "}
         <div className="App">
-          <Router>
+          <Switch>
             <Route
               exact
               path="/"
@@ -117,13 +117,6 @@ class App extends React.Component {
                     <Landing {...routeProps} />
                   </>
                 );
-              }}
-            />
-            <Route
-              exact
-              path="/Home"
-              render={routeProps => {
-                return <Home {...routeProps} />;
               }}
             />
             <Route
@@ -140,25 +133,11 @@ class App extends React.Component {
                 return <AccountCreation {...routeProps} />;
               }}
             />
-            {/* <Route
-              exact
-              path="/Edit-Account"
-              render={routeProps => {
-                return <EditAccount {...routeProps} />;
-              }}
-            /> */}
             <Route
               exact
               path="/user/:username"
               render={routeProps => {
                 return <Profile {...routeProps} />;
-              }}
-            />
-            <Route
-              exact
-              path="/search/:searchterm"
-              render={routeProps => {
-                return <SearchResults {...routeProps} />;
               }}
             />
             <Route
@@ -175,12 +154,12 @@ class App extends React.Component {
             />
             <Route
               exact
-              path="/Edit-Recipe/:recipeid"
+              path="/edit-recipe/:recipeid"
               render={routeProps => {
                 return <EditRecipe {...routeProps} />;
               }}
             />
-          </Router>
+          </Switch>
         </div>
       </Context.Provider>
     );
