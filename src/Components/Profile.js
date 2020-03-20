@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import Recipe from "../Components/Recipe";
 import Context from "./Context";
 import "../Styles/Buttons.css";
-
-
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -27,10 +25,6 @@ export default class Profile extends React.Component {
       return words.slice(0, 2).join(" ") + " ...";
     }
     return text;
-  };
-
-  editAccount = () => {
-    console.log("not setup yet");
   };
 
   deleteAccount = () => {
@@ -68,9 +62,17 @@ export default class Profile extends React.Component {
 
   renderNoRecipes = () => {
     return (
-      <h3 className="noRecipe">
-        {this.context.currentUser.first_name} has no recipes currently
-      </h3>
+      <>
+        <div className="no-recipe-div">
+          <h3 className="noRecipe">
+            {this.context.currentUser.first_name} has no recipes currently
+          </h3>
+          <link to="/"></link>
+          <Link type="submit" className="noRecipeGoHome" to={"/"}>
+            Home
+          </Link>
+        </div>
+      </>
     );
   };
 
@@ -112,8 +114,12 @@ export default class Profile extends React.Component {
           {recipesOwned.length > 0
             ? this.renderRecipe(recipesOwned)
             : this.renderNoRecipes()
-            // this.checkRecipeOwner())
           }
+        </div>
+        <div>
+          <Link type="submit" className="noRecipeGoHome" to="/">
+            Home
+          </Link>
         </div>
       </>
     );

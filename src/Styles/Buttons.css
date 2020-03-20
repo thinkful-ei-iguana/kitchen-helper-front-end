@@ -1,4 +1,10 @@
 @media screen and (min-width: 1px) {
+  .accountChecker:hover {
+    background-color: black;
+  }
+  .noRecipeGoHome:hover {
+    background-color: black;
+  }
   .submitCreate:hover {
     background-color: black;
   }
@@ -43,6 +49,30 @@
     background-color: black;
   }
 }
+@media screen and (min-width: 219px) {
+  .accountChecker {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    background: var(--alt-bg);
+    display: flex;
+    width: 300px;
+    height: 50px;
+    flex-direction: column;
+    font-size: x-large;
+    border: black solid 2px;
+    color: rgb(40, 158, 14);
+    text-decoration: none;
+    box-shadow: 0px 11px 21px -8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: all 0.15s;
+  }
+  .noRecipeGoHome {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
 @media screen and (min-width: 319px) {
   .noRecipeGoHome {
     align-items: center;
@@ -52,7 +82,7 @@
     width: 150px;
     height: 50px;
     flex-direction: column;
-    font-size: smaller;
+    font-size: x-large;
     border: black solid 2px;
     color: rgb(40, 158, 14);
     text-decoration: none;
@@ -85,7 +115,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -199,7 +229,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 250px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -275,7 +305,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -381,7 +411,7 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -401,6 +431,9 @@
 
 @media screen and (min-width: 359px) {
   .noRecipeGoHome {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
     align-items: center;
     text-align: center;
     background: var(--alt-bg);
@@ -408,7 +441,7 @@
     width: 150px;
     height: 50px;
     flex-direction: column;
-    font-size: smaller;
+    font-size: x-large;
     border: black solid 2px;
     color: rgb(40, 158, 14);
     text-decoration: none;
@@ -422,7 +455,7 @@
     align-items: center;
     text-align: center;
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     border: black solid 2px;
@@ -538,7 +571,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 250px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -618,7 +651,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     border: black solid 2px;
     height: 50px;
     flex-direction: column;
@@ -726,7 +759,7 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -746,14 +779,15 @@
 
 @media screen and (min-width: 478px) {
   .noRecipeGoHome {
-    align-items: center;
+    vertical-align: middle;
     text-align: center;
+    padding-top: 8px;
     background: var(--alt-bg);
     display: flex;
     width: 150px;
     height: 50px;
     flex-direction: column;
-    font-size: smaller;
+    font-size: x-large;
     border: black solid 2px;
     color: rgb(40, 158, 14);
     text-decoration: none;
@@ -767,7 +801,7 @@
     align-items: center;
     text-align: center;
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     border: black solid 2px;
@@ -883,7 +917,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 250px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -963,7 +997,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     border: black solid 2px;
     height: 50px;
     flex-direction: column;
@@ -1071,7 +1105,7 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -1091,14 +1125,15 @@
 
 @media screen and (min-width: 767px) {
   .noRecipeGoHome {
-    align-items: center;
+    vertical-align: middle;
     text-align: center;
+    padding-top: 8px;
     background: var(--alt-bg);
     display: flex;
     width: 150px;
     height: 50px;
     flex-direction: column;
-    font-size: smaller;
+    font-size: x-large;
     border: black solid 2px;
     color: rgb(40, 158, 14);
     text-decoration: none;
@@ -1112,7 +1147,7 @@
     align-items: center;
     text-align: center;
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     border: black solid 2px;
@@ -1228,7 +1263,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 250px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -1308,7 +1343,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     border: black solid 2px;
     height: 50px;
     flex-direction: column;
@@ -1416,7 +1451,7 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -1436,14 +1471,15 @@
 
 @media screen and (min-width: 1023px) {
   .noRecipeGoHome {
-    align-items: center;
+    vertical-align: middle;
     text-align: center;
+    padding-top: 8px;
     background: var(--alt-bg);
     display: flex;
     width: 150px;
     height: 50px;
     flex-direction: column;
-    font-size: smaller;
+    font-size: x-large;
     border: black solid 2px;
     color: rgb(40, 158, 14);
     text-decoration: none;
@@ -1457,7 +1493,7 @@
     align-items: center;
     text-align: center;
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     border: black solid 2px;
@@ -1573,7 +1609,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 250px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -1653,7 +1689,7 @@
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     border: black solid 2px;
     height: 50px;
     flex-direction: column;
@@ -1668,12 +1704,12 @@
     transition: all 0.15s;
   }
 
-  .login {
+  .submitCreateRecipe.login {
     align-self: center;
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     border: black solid 2px;
     height: 50px;
     flex-direction: column;
@@ -1688,12 +1724,12 @@
     transition: all 0.15s;
   }
 
-  .create-account {
+  .submitCreateRecipe.login.create-account {
     align-self: center;
     text-align: center;
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     border: black solid 2px;
     height: 50px;
     flex-direction: column;
@@ -1761,7 +1797,7 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 150px;
+    width: 220px;
     height: 50px;
     flex-direction: column;
     font-size: smaller;
@@ -1776,5 +1812,116 @@
   .ownerSelectors {
     align-content: center;
     text-align: center;
+  }
+}
+@media screen and (min-width: 1px) {
+  .newAccount {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .noRecipeGoHome {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .submitLogin {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .create-new-recipe {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .user-name {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .logout-button {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .editRecipe {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .delete-recipe-button {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .submitRecipeEdit {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .cancel-view {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .cancelEditRecipe {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .submitCreateRecipe {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .login {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .create-account {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .Creation-Form {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .dropbtn {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+  }
+  .dropdown {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
+    padding-bottom: 15px;
+  }
+  .field__input {
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 8px;
+    font-size: x-large;
   }
 }
