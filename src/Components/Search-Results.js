@@ -9,8 +9,8 @@ export default class SearchResults extends React.Component {
 
   componentDidMount() {
     fetch(
-      `http://localhost:8000/api/recipes/${
-        this.props.location.pathname.split("/")[2]
+      `https://shrouded-castle-51769.herokuapp.com/api/recipes/${
+      this.props.location.pathname.split("/")[2]
       }`
     )
       .then(res => res.json())
@@ -39,8 +39,8 @@ export default class SearchResults extends React.Component {
             <p>{this.state.recipeSearch.time_to_make}</p>
           </>
         ) : (
-          "I'm sorry I can't find that."
-        )}
+            "I'm sorry I can't find that."
+          )}
       </div>
     );
   }
