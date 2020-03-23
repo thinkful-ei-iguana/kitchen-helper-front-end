@@ -32,8 +32,7 @@ export default class EditRecipe extends React.Component {
 
   handleEditSuccess = () => {
     const { history } = this.props;
-    console.log("make it here")
-    history.push(`/recipes/${this.state.recipe.id}`);
+    history.push(`/recipe/${this.state.recipe.id}`);
   };
 
   editSubmit = e => {
