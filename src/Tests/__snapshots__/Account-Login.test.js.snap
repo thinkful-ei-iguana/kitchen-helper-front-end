@@ -50,6 +50,12 @@ exports[`renders the UI as expected 1`] = `
         </span>
       </span>
     </label>
+    <h3>
+      Please login using: guestuser
+    </h3>
+    <h3>
+      The password is: Password!2
+    </h3>
     <div
       className="btn-row"
     >

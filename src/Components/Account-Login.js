@@ -10,7 +10,7 @@ export default class Login extends React.Component {
   static defaultProps = {
     location: {},
     history: {
-      push: () => {}
+      push: () => { }
     }
   };
 
@@ -71,6 +71,8 @@ export default class Login extends React.Component {
               <span className="a-field__label">Password</span>
             </span>
           </label>
+          <h3>Please login using: guestuser</h3>
+          <h3>The password is: Password!2</h3>
           <div className="btn-row">
             <button type="submit" className="submitLogin" value="Login">
               Login

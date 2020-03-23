@@ -47,7 +47,7 @@ class App extends React.Component {
         }))
       );
     }
-    fetch("https://shrouded-castle-51769.herokuapp.com/")
+    fetch("https://shrouded-castle-51769.herokuapp.com/api/recipes")
       .then(res => {
         return res.json();
       })
