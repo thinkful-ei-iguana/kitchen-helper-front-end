@@ -2,9 +2,9 @@
   .accountChecker:hover {
     background-color: black;
   }
-  .noRecipeGoHome:hover {
+   /* noRecipeGoHome:hover {
     background-color: black;
-  }
+  } */
   .submitCreate:hover {
     background-color: black;
   }
@@ -14,9 +14,9 @@
   .cancel-view:hover {
     background-color: black;
   }
-  .noRecipeGoHome:hover {
+   /* noRecipeGoHome:hover {
     background-color: black;
-  }
+  } */
   .cancelEditRecipe:hover {
     background-color: black;
   }
@@ -69,12 +69,13 @@
     border-radius: 10px;
     transition: all 0.15s;
   }
-  .noRecipeGoHome {
+   /* noRecipeGoHome {
     vertical-align: middle;
     text-align: center;
-    padding-top: 8px;
+    padding-top: 8px; */
+   }
 @media screen and (min-width: 319px) {
-  .noRecipeGoHome {
+   /* noRecipeGoHome {
     align-items: center;
     text-align: center;
     background: var(--alt-bg);
@@ -91,7 +92,7 @@
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.15s;
-  }
+  } */
   .submitCreate {
     align-items: center;
     text-align: center;
@@ -430,7 +431,7 @@
 }
 
 @media screen and (min-width: 359px) {
-  .noRecipeGoHome {
+  /* .noRecipeGoHome {
     vertical-align: middle;
     text-align: center;
     padding-top: 8px;
@@ -450,7 +451,7 @@
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.15s;
-  }
+  } */
   .newAccount {
     align-items: center;
     text-align: center;
@@ -778,7 +779,7 @@
 }
 
 @media screen and (min-width: 478px) {
-  .noRecipeGoHome {
+  /* .noRecipeGoHome {
     vertical-align: middle;
     text-align: center;
     padding-top: 8px;
@@ -796,7 +797,7 @@
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.15s;
-  }
+  } */
   .newAccount {
     align-items: center;
     text-align: center;
@@ -1124,7 +1125,7 @@
 }
 
 @media screen and (min-width: 767px) {
-  .noRecipeGoHome {
+  /* .noRecipeGoHome {
     vertical-align: middle;
     text-align: center;
     padding-top: 8px;
@@ -1142,7 +1143,7 @@
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.15s;
-  }
+  } */
   .newAccount {
     align-items: center;
     text-align: center;
@@ -1470,7 +1471,7 @@
 }
 
 @media screen and (min-width: 1023px) {
-  .noRecipeGoHome {
+   /* .noRecipeGoHome {
     vertical-align: middle;
     text-align: center;
     padding-top: 8px;
@@ -1488,7 +1489,7 @@
     margin-top: 10px;
     border-radius: 10px;
     transition: all 0.15s;
-  }
+  } */
   .newAccount {
     align-items: center;
     text-align: center;
@@ -1821,12 +1822,12 @@
     padding-top: 8px;
     font-size: x-large;
   }
-  .noRecipeGoHome {
+  /* .noRecipeGoHome {
     vertical-align: middle;
     text-align: center;
     padding-top: 8px;
     font-size: x-large;
-  }
+  } */
   .submitLogin {
     vertical-align: middle;
     text-align: center;
