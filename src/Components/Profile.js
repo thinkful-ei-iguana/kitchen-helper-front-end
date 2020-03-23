@@ -54,7 +54,7 @@ export default class Profile extends React.Component {
     return recipes.map(recipe => {
       return (
         <div key={recipe.id} className="food-item">
-          <Recipe {...recipe} />;
+          <Recipe {...recipe} />
         </div>
       );
     });
