@@ -38,7 +38,6 @@ export default class EditRecipe extends React.Component {
   editSubmit = e => {
     e.preventDefault();
     try {
-      console.log(this.state, "this is current state")
       let { title, recipe_description, recipe_ingredients, time_to_make } = e.target;
 
 
