@@ -25,10 +25,10 @@ export default class DetailedView extends React.Component {
       recipeData =>
         this.setState({
           recipe: recipeData
-        }) +
-        RecipeHelper.getRecipeOwnerData(recipeData.owner).then(ownerData => {
-          this.setState({ owner: ownerData });
         })
+      // RecipeHelper.getRecipeOwnerData(recipeData.owner).then(ownerData => {
+      //   this.setState({ owner: ownerData });
+      // })
     );
   }
 
