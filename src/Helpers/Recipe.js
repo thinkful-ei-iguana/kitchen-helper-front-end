@@ -63,15 +63,18 @@ const RecipeHelper = {
     );
   },
   updateRecipe(updatedRecipe, id) {
-    return fetch(`${config.API_ENDPOINT}/recipes/edit/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-        Authorization: `Bearer ${config.TOKEN_KEY}`
-      },
-      body: JSON.stringify(updatedRecipe)
-    });
+    try {
+      return fetch(`${config.API_ENDPOINT}/recipes/edit/${id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${config.TOKEN_KEY}`
+        },
+        body: JSON.stringify(updatedRecipe)
+      });
+    } catch (err) {
+      console.log(err)
+    }
   }
-};
-
+}
 export default RecipeHelper;

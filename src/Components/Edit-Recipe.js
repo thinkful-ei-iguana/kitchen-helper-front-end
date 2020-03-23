@@ -32,54 +32,51 @@ export default class EditRecipe extends React.Component {
 
   handleEditSuccess = () => {
     const { history } = this.props;
+    console.log("make it here")
     history.push(`/recipes/${this.state.recipe.id}`);
   };
 
-  // handleChange = e => {
-  //   e.preventDefault();
-  //   console.log(this.state, "this is state at handleChange", e.target)
-  //   this.setState({
-  //     [e.target.name]: e.target.name.value
-  //   });
-  // };
-
   editSubmit = e => {
     e.preventDefault();
-    console.log(this.state, "this is current state")
-    let { title, recipe_description, recipe_ingredients, time_to_make } = e.target;
+    try {
+      console.log(this.state, "this is current state")
+      let { title, recipe_description, recipe_ingredients, time_to_make } = e.target;
 
 
-    this.setState({ error: null });
-    RecipeHelper.updateRecipe(
-      {
-        title: title.value,
-        owner: this.context.currentUser.id,
-        recipe_description: recipe_description.value,
-        recipe_ingredients: recipe_ingredients.value,
-        time_to_make: time_to_make.value,
-      },
-      this.state.recipe.id
-    )
-      .then(recipe => {
-        if (!recipe.ok) { this.setState({ error: !recipe.ok }) }
-        else {
-          title.value = "";
-          recipe_description.value = "";
-          recipe_ingredients.value = "";
-          time_to_make.value = "";
-          this.handleEditSuccess();
-        }
-      })
-      .catch(res => {
-        this.setState({ error: res.error });
-      });
+      this.setState({ error: null });
+      RecipeHelper.updateRecipe(
+        {
+          title: title.value,
+          owner: this.context.currentUser.id,
+          recipe_description: recipe_description.value,
+          recipe_ingredients: recipe_ingredients.value,
+          time_to_make: time_to_make.value,
+        },
+        this.state.recipe.id
+      )
+        .then(recipe => {
+          if (!recipe.ok) { this.setState({ error: !recipe.ok }) }
+          else {
+            title.value = "";
+            recipe_description.value = "";
+            recipe_ingredients.value = "";
+            time_to_make.value = "";
+            this.handleEditSuccess();
+          }
+        })
+        .catch(res => {
+          this.setState({ error: res.error });
+        });
+    } catch (err) {
+      console.log(err)
+    }
   };
 
   render() {
     return (
       <div className="EditRecipe">
         <header className="Creation-Header"></header>
-        <form className="Creation-Form" onChange={this.handleChange} onSubmit={this.editSubmit}>
+        <form className="Creation-Form" onSubmit={this.editSubmit}>
           <label className="field a-field a-field_a2">
             <input
               className="field__input a-field__input"
