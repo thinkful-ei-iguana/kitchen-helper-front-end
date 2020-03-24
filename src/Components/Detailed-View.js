@@ -34,7 +34,7 @@ export default class DetailedView extends React.Component {
 
   deleteRecipe = () => {
     RecipeHelper.delete(this.props.match.params.recipeid).then(
-      this.props.history.push("/")
+      this.props.history.push("/Home")
     );
   };
 
@@ -96,7 +96,7 @@ export default class DetailedView extends React.Component {
           </div>
           <div>{this.deleteOption()}</div>
           <div>{this.ownerOption()}</div>
-          <Link to="/">
+          <Link to="/Home">
             <button className="cancel-view">Cancel</button>
           </Link>
         </div>

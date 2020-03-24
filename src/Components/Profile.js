@@ -30,7 +30,7 @@ export default class Profile extends React.Component {
   deleteAccount = () => {
     AuthHelper.deleteAccount(this.context.currentUser.user_name)
       .then(this.context.onLogout)
-      .then(this.props.history.push("/"));
+      .then(this.props.history.push("/Home"));
   };
 
   accountOption = () => {
@@ -67,8 +67,8 @@ export default class Profile extends React.Component {
           <h3 className="noRecipe">
             {this.context.currentUser.first_name} has no recipes currently
           </h3>
-          <link to="/"></link>
-          <Link type="submit" className="noRecipeGoHome" to={"/"}>
+          <link to="/Home"></link>
+          <Link type="submit" className="noRecipeGoHome" to={"/Home"}>
             Home
           </Link>
         </div>
@@ -117,7 +117,7 @@ export default class Profile extends React.Component {
           }
         </div>
         <div>
-          <Link type="submit" className="noRecipeGoHome" to="/">
+          <Link type="submit" className="noRecipeGoHome" to="/Home">
             Home
           </Link>
         </div>

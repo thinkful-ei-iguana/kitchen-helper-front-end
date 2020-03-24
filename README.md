@@ -35,7 +35,7 @@
 
    ![Creating an account](public/screenshots/creatinganaccount.png)
 
-   ![Detailed view of a recipe](public/screenshots/viewofarecipe.png)   
+   ![Detailed view of a recipe](public/screenshots/detailedviewofarecipe.png)   
 
    ![Editing a recipe](public/screenshots/editingarecipe.png)
 

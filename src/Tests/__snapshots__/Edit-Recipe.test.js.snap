@@ -79,7 +79,7 @@ exports[`renders the UI as expected 1`] = `
         Submit
       </button>
       <a
-        href="/"
+        href="/Home"
         onClick={[Function]}
       >
         <button

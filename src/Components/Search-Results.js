@@ -10,7 +10,7 @@ export default class SearchResults extends React.Component {
   componentDidMount() {
     fetch(
       `https://shrouded-castle-51769.herokuapp.com/api/recipes/${
-      this.props.location.pathname.split("/")[2]
+      this.props.location.pathname.split("/Home")[2]
       }`
     )
       .then(res => res.json())
@@ -21,7 +21,7 @@ export default class SearchResults extends React.Component {
   render() {
     return (
       <div className="Landing">
-        <Link to="/">Home</Link>
+        <Link to="/Home">Home</Link>
         <header id="Landing-Header">
           <form id="SearchForm">
             <label className="field a-field a-field_a2">

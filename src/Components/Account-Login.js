@@ -35,7 +35,7 @@ export default class Login extends React.Component {
         password.value = "";
         this.context.saveAuthToken(res.authToken);
         this.context.onLogin(() => {
-          this.props.history.push("/");
+          this.props.history.push("/Home");
         });
       })
       .catch(res => {

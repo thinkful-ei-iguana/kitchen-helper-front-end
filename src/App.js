@@ -12,6 +12,7 @@ import EditRecipe from "../src/Components/Edit-Recipe";
 import Profile from "../src/Components/Profile";
 import Darkmode from "darkmode-js";
 import DetailedView from "../src/Components/Detailed-View";
+import LandingPage from "../src/Components/LandingPage";
 
 const options = {
   bottom: "64px",
@@ -110,6 +111,13 @@ class App extends React.Component {
             <Route
               exact
               path="/"
+              render={routeProps => {
+                return <LandingPage {...routeProps} />
+              }}
+            />
+            <Route
+              exact
+              path="/Home"
               render={routeProps => {
                 return (
                   <>

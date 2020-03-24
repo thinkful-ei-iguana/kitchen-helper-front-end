@@ -39,7 +39,7 @@ export default class DesktopMenu extends React.Component {
                 <Link
                   className="logout-button"
                   onClick={this.context.onLogout}
-                  to="/"
+                  to="/Home"
                 >
                   Logout
                 </Link>

@@ -22,7 +22,7 @@ export default class CreateRecipe extends React.Component {
 
   handleCreationSuccess = () => {
     const { history } = this.props;
-    history.push("/");
+    history.push("/Home");
   };
 
   state = { error: null };
@@ -109,8 +109,6 @@ export default class CreateRecipe extends React.Component {
             </span>
           </label>
           <div className="btn-row">
-            {/* <Link to="/">
-            </Link> */}
             <button className="submitCreateRecipe">Create recipe</button>
             <Link to="">
               <button className="cancelEditRecipe">Cancel</button>
