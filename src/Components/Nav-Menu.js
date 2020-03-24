@@ -22,7 +22,7 @@ export default class NavMenu extends React.Component {
   render() {
     return (
       <header className="Nav-Header">
-        <div>
+        <div className="LandingPageLinkDiv">
           <Link className="LandingPageLink" to="/">Landing Page Link</Link>
         </div>
         <DesktopMenu
