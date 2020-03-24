@@ -1,18 +1,14 @@
 # Kitchen Helper:
 
     Kitchen Helper is a best friend in the kitchen.
-    This app combines the ability to track the items in your pantry,
-    the opportunity to plan your meals for a given time period and puts a
-    large database of recipes at your fingertips. This app also allows
-    you to create and add your own recipes.
+    This app combines the ability to create, edit, and add your own recipes.
     
 
-## Contributors:
+## Author:
 
-- Maggie McClellan
+
 - Calvin Rosehart
-- Anugrah Lambogo
-- Christina Chapman
+
 
 
 ## Motivation:
@@ -30,31 +26,31 @@
 
   * [Server Side Repo](https://github.com/thinkful-ei-iguana/kitchen-helper)
 
-  * [Live App](Filler text)
+  * [Live App](https://kitchen-helper-front-end.now.sh/)
 
 
 
 ## Screenshots:
 
-   ![Landing Logo](src/Assets/LandingLogo.gif)
+   ![Creating a recipe](public/screenshots/creatingarecipe.png)
 
-   ![Home Page](src/Assets/homePage.gif)
+   ![Creating an account](public/screenshots/creatinganaccount.png)
 
-   ![Pantry Landing Page](src/Assets/pantryLanding.gif)   
+   ![Detailed view of a recipe](public/screenshots/viewofarecipe.png)   
 
-   ![Recipe Landing Page](src/Assets/recipeLanding.gif)
+   ![Editing a recipe](public/screenshots/editingarecipe.png)
 
-   ![Recipe Detail Page](src/Assets/recipeDetail.gif)
+   ![Logged in main page](public/screenshots/Loggedinmainpage.png)
    
-   ![Meal Plan Add](src/Assets/planAdd.gif)
+   ![Logging in](public/screenshots/loggingin.png)
    
-   ![Dark Mode Banner](src/Assets/DarkMode-Banner.gif)
+   ![Profile](public/screenshots/profilesection.png)
 
    
 
 ## Technologies:
 
-**Front End Tech:** HTML, CSS, JavaScript, React, Modal, Widgets(Dark Mode)
+**Front End Tech:** HTML, CSS, JavaScript, React, Widgets(Dark Mode)
 
 **Back End Tech:** NodeJs, ExpressJs, PostgreSQL
 
@@ -64,45 +60,45 @@
 
 - Ability to create/login with user accounts
 
-- Ability to add and filter ingredients in the pantry
-
-- Ability to track the stock level of your ingredients
-
-- Ability to search and display recipes, create new recipes
+- Ability to display recipes, create new recipes
 
 - Ability to edit and delete recipes
 
-- Ability to create meal plans using the recipes and the pantry
-
-- Ability to select a recipe from ones owned by user and set date for meal plan
-
-- Ability to display prep time and ingredients needed from the chosen recipe
-
-## Upcoming Features:
-
-- Ability to create a favorite list of recipes
-
-- Ability to have a recent search result list
-
-- Ability to create a shopping list from the meal plan feature
-
-- Ability to use the camera and a barcode scanner to add items to your pantry and then in turn to the shopping list
+- Ability to display prep time and ingredients needed from the selected recipe
 
 ## Code Example:
 
-    Code snippet For Modal Pop-up
+    Code snippet For Editing a recipe
 
-        StyledModal = Modal.styled`
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            opacity: ${props => this.props.opacity};
-            transition: opacity ease 500ms;
-        `;
+handleEditSuccess = () => {
+    const { history } = this.props;
+    history.push(`/recipe/${this.state.recipe.id}`);
+  };
 
-        toggleModal = (e) => {
-            this.setState({
-            isOpen: !this.state.isOpen
-            })
-        }
+  editSubmit = e => {
+    e.preventDefault();
+    try {
+      let { title, recipe_description, recipe_ingredients, time_to_make } = e.target;
+
+
+      this.setState({ error: null });
+      RecipeHelper.updateRecipe(
+        {
+          title: title.value,
+          owner: this.context.currentUser.id,
+          recipe_description: recipe_description.value,
+          recipe_ingredients: recipe_ingredients.value,
+          time_to_make: time_to_make.value,
+        },
+        this.state.recipe.id
+      )
+        .then(recipe => {
+          if (!recipe.ok) { this.setState({ error: !recipe.ok }) }
+          else {
+            title.value = "";
+            recipe_description.value = "";
+            recipe_ingredients.value = "";
+            time_to_make.value = "";
+            this.handleEditSuccess();
+          }
+        })
