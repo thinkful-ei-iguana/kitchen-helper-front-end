@@ -1,6 +1,6 @@
 .ThingRecipeItem:hover {
   cursor: pointer;
-  opacity: 80%;
+  opacity: .8;
   transition: all 0.5s;
   background-color: rgb(0, 0, 0);
 }
