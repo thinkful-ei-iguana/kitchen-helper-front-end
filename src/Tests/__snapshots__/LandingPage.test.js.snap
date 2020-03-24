@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<div
+  className="LandingPage"
+>
+  <header
+    className="flex-container"
+    id="LandingPage-Header"
+  >
+    <div
+      className="flex-item branding"
+    />
+    <div
+      className="flex-item"
+    />
+  </header>
+  <section
+    id="landingPageDocumentation"
+  >
+    <div
+      className="site-description"
+    >
+      <p
+        className="p1"
+      >
+        Kitchen Helper is a best friend in the kitchen. You have the ability to add your own recipes and update them as you need.
+      </p>
+      <p
+        className="p2"
+      >
+        Kitchen Helper will be a time and money saver, helping you create amazing meals at home while staying organized and never running out of that special ingredient you need for your amazing lasagna recipe.
+      </p>
+      <div
+        className="login-signup"
+      >
+        <div
+          className="LoginBtn"
+        >
+          <label
+            className="login-label"
+          >
+            Login: 
+          </label>
+          <a
+            className="login-btn"
+            href="/login"
+            onClick={[Function]}
+          >
+            Let's Get Cooking!
+          </a>
+        </div>
+        <div
+          className="RegistrationBtn"
+        >
+          <label
+            className="registration-label"
+          >
+            Sign Up:
+          </label>
+          <a
+            className="registration-btn"
+            href="/create-account"
+            onClick={[Function]}
+          >
+            Come Join the Fun!
+          </a>
+        </div>
+      </div>
+      <h4>
+        Please test out our site using the username of 'guestuser' and the password of Password!2
+      </h4>
+      <div
+        className="sampleImages"
+      >
+        <img
+          alt="Logging Into Main Page"
+          className="landingSamples"
+          id="logging-in"
+          src="loggingin.png"
+        />
+        <img
+          alt="Home Page"
+          className="landingSamples"
+          id="logged-in-main-page"
+          src="Loggedinmainpage.png"
+        />
+        <img
+          alt="Recipe Detail"
+          className="landingSamples"
+          id="recipe-details"
+          src="detailedviewofarecipe.png"
+        />
+      </div>
+    </div>
+  </section>
+  <section
+    id="Landing-Buttons"
+  >
+    <hr
+      id="Connect-Divider"
+    />
+    <div
+      id="buttons"
+    />
+  </section>
+</div>
+`;

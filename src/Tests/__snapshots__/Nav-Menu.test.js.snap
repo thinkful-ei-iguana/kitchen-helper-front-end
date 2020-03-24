@@ -4,10 +4,15 @@ exports[`renders the UI as expected 1`] = `
 <header
   className="Nav-Header"
 >
-  <a
-    href="/Landing"
-    onClick={[Function]}
-  />
+  <div>
+    <a
+      className="LandingPageLink"
+      href="/"
+      onClick={[Function]}
+    >
+      Landing Page Link
+    </a>
+  </div>
   <div
     className="desktopMenu"
   >

@@ -87,7 +87,7 @@ exports[`renders the UI as expected 1`] = `
         Create recipe
       </button>
       <a
-        href="/Home"
+        href="/"
         onClick={[Function]}
       >
         <button
