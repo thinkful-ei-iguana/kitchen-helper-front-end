@@ -14,27 +14,29 @@ export default class Landing extends React.Component {
     }
 
     return (
-      <div className="Landing">
-        <header id="Landing-Header" className="flex-container">
-          <div className="flex-item"></div>
-        </header>
-        <section id="landingDocumentation">
-          <RecentResults />
-        </section>
-        <section id="Landing-Buttons">
-          <div id="buttons">
-            <a href="https://github.com" target="blank_">
-              <i className="fab fa-github"></i>
-            </a>
-            <a href="https://github.com" target="blank_">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com" target="blank_">
-              <i className="fas fa-desktop"></i>
-            </a>
-          </div>
-        </section>
-      </div>
+      <>
+        <div className="Landing">
+          <header id="Landing-Header" className="flex-container">
+            <div className="flex-item"></div>
+          </header>
+          <section id="landingDocumentation">
+            <RecentResults />
+          </section>
+          <section id="Landing-Buttons">
+            <div id="buttons">
+              <a href="https://github.com" target="blank_">
+                <i className="fab fa-github"></i>
+              </a>
+              <a href="https://github.com" target="blank_">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com" target="blank_">
+                <i className="fas fa-desktop"></i>
+              </a>
+            </div>
+          </section>
+        </div>
+      </>
     );
   }
 }
