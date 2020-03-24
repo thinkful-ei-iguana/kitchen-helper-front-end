@@ -29,7 +29,6 @@
   * [Live App](https://kitchen-helper-front-end.now.sh/)
 
 
-
 ## Screenshots:
 
    ![Creating a recipe](public/screenshots/creatingarecipe.png)
