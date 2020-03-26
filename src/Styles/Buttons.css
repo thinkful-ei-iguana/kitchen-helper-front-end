@@ -440,8 +440,8 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 220px;
-    height: 50px;
+    width: 260px;
+    height: 75px;
     flex-direction: column;
     font-size: smaller;
     border: black solid 2px;
@@ -788,8 +788,8 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 220px;
-    height: 50px;
+    width: 320px;
+    height: 75px;
     flex-direction: column;
     font-size: smaller;
     border: black solid 2px;
@@ -1134,8 +1134,8 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 220px;
-    height: 50px;
+    width: 400px;
+    height: 75px;
     flex-direction: column;
     font-size: smaller;
     border: black solid 2px;
@@ -1519,8 +1519,8 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 220px;
-    height: 50px;
+    width: 520px;
+    height: 75px;
     flex-direction: column;
     font-size: smaller;
     border: black solid 2px;
@@ -1865,8 +1865,8 @@
   .field__input {
     background: var(--alt-bg);
     display: flex;
-    width: 220px;
-    height: 50px;
+    width: 620px;
+    height: 75px;
     flex-direction: column;
     font-size: smaller;
     border: black solid 2px;
